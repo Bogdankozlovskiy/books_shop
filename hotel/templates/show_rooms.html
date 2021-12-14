@@ -11,6 +11,13 @@
       <h3>Description: {{ room.description }}</h3>
       <h3>Condition is available {{ room.condition }} </h3>
       <h3>Price: {{ room.price|floatformat:2 }}</h3>
+      <img src="{{ room.image.url }}" height="150">
+      <form action="{% url 'Hotel:order-room' room_id=room.id %}" method="post">
+          {% csrf_token %}
+          <input type="submit" value="Order">
+          <input type="date" value='{{ start_date|date:"Y-m-d" }}' name="start_date" hidden>
+          <input type="date" value='{{ end_date|date:"Y-m-d" }}' name="end_date" hidden>
+      </form>
       <hr>
   {% endfor %}
 </body>
