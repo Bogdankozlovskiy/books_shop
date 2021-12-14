@@ -14,4 +14,8 @@ def search_room(request):
     end_date = request.GET.get("end_date")
     end_date = datetime.strptime(end_date, "%Y-%m-%d")
     end_date = end_date.astimezone(timezone.get_current_timezone())
-    return redirect("search-room")
+
+    ordered_case_1 = OrderRoom.objects.filter(start_date__gt=start_date, end_date__lt=end_date)
+    ordered_case_2 = OrderRoom.objects.filter(start_date__lt=start_date, end_date__lt=end_date)
+    free_rooms = Room.objects.exclude(ordered__in=ordered_case_1).exclude(ordered__in=ordered_case_2)
+    return render(request, "show_rooms.html", {"free_rooms": free_rooms})

@@ -28,8 +28,8 @@ class OrderRoom(models.Model):
         verbose_name = "бронь"
         verbose_name_plural = "брони"
 
-    room = models.ForeignKey(Room, on_delete=models.CASCADE, verbose_name="Комната")
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="заказчик")
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, verbose_name="Комната", related_name="ordered")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="заказчик", related_name="ordered")
     price = models.DecimalField(verbose_name="цена", max_digits=5, decimal_places=2, blank=True)
     start_date = models.DateTimeField(verbose_name="дата заселения")
     end_date = models.DateTimeField(verbose_name="дата выселения")
