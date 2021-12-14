@@ -6,7 +6,12 @@
 </head>
 <body>
   {% for room in free_rooms %}
-  <H3>Room number is {{ room.number }}</H3>
+      <H3>Room number: {{ room.number }}</H3>
+      <h3>Capacity: {{ room.capacity }}</h3>
+      <h3>Description: {{ room.description }}</h3>
+      <h3>Condition is available {{ room.condition }} </h3>
+      <h3>Price: {{ room.price|floatformat:2 }}</h3>
+      <hr>
   {% endfor %}
 </body>
 </html>
