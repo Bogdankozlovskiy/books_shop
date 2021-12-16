@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'myapp',
     'hotel',
+    'api',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

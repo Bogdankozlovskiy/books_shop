@@ -102,6 +102,7 @@ def add_like_to_comment(request, comment_id):
 
 
 def add_like_to_comment_ajax(request, comment_id):
+    print(request.GET)
     comment = Comment.objects.get(id=comment_id)
     if request.user in comment.like.all():
         comment.like.remove(request.user)
@@ -109,3 +110,6 @@ def add_like_to_comment_ajax(request, comment_id):
         comment.like.add(request.user)
     comment.save()
     return JsonResponse({"likes": comment.like.count()})
+
+# API Application programm interface
+# REST API
