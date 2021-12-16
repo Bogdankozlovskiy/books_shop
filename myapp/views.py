@@ -89,3 +89,14 @@ def login_view(request):
         else:
             return redirect("MyApp:login")
     return redirect("MyApp:main-page")
+
+
+@login_required(login_url="MyApp:login")
+def add_like_to_comment(request, comment_id):
+    comment = Comment.objects.get(id=comment_id)
+    if request.user in comment.like.all():
+        comment.like.remove(request.user)
+    else:
+        comment.like.add(request.user)
+    comment.save()
+    return redirect("MyApp:main-page")

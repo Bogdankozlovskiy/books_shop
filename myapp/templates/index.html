@@ -7,7 +7,7 @@
 <body>
 {{user}}<br>
 {% if user.is_authenticated %}
-    <a href="{% url 'logout' %}">logout</a>
+    <a href="{% url 'MyApp:logout' %}">logout</a>
 {% else %}
     <a href="{% url 'MyApp:login' %}">login</a>
 {% endif %}<br>
@@ -51,6 +51,10 @@
                 <input type="submit" value="update">
             </form>
         {% endif %}
+        <form action="{% url 'MyApp:add-like-to-comment' comment_id=comment.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="like">
+        </form>
         <br>
     {% endfor %}
     <form action="{% url 'MyApp:add-comment' book_id=book.id %}" method="post">
