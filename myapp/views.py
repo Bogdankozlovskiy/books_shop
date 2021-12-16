@@ -3,8 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from myapp.models import Book, RateBookUser, OrderBookUser, Comment
 from django.db.models import Avg, Sum, Prefetch, Count, F
-# HW: do CRUD for Books
-#     implement ability for like to comment
+from django.http import JsonResponse
 
 
 def hello(request):
@@ -100,3 +99,13 @@ def add_like_to_comment(request, comment_id):
         comment.like.add(request.user)
     comment.save()
     return redirect("MyApp:main-page")
+
+
+def add_like_to_comment_ajax(request, comment_id):
+    comment = Comment.objects.get(id=comment_id)
+    if request.user in comment.like.all():
+        comment.like.remove(request.user)
+    else:
+        comment.like.add(request.user)
+    comment.save()
+    return JsonResponse({"likes": comment.like.count()})

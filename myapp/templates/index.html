@@ -1,11 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 </head>
 <body>
-{{user}}<br>
+<h2>{{user}}</h2>
 {% if user.is_authenticated %}
     <a href="{% url 'MyApp:logout' %}">logout</a>
 {% else %}
@@ -40,7 +43,7 @@
         {{ comment.date }}
         {{ comment.user }}
         {{ comment.text }}
-        {{ comment.likes }}
+        <i id="count_of{{ comment.id }}">{{ comment.likes }}</i>
         {% if comment.user == user %}
             <form action="{% url 'MyApp:delete-comment' comment_id=comment.id %}" method="post">
                 {% csrf_token %}
@@ -51,10 +54,9 @@
                 <input type="submit" value="update">
             </form>
         {% endif %}
-        <form action="{% url 'MyApp:add-like-to-comment' comment_id=comment.id %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="like">
-        </form>
+
+        <h3 class="like" id="{{ comment.id }}">like</h3>
+
         <br>
     {% endfor %}
     <form action="{% url 'MyApp:add-comment' book_id=book.id %}" method="post">
