@@ -9,9 +9,9 @@
 {% if user.is_authenticated %}
     <a href="{% url 'logout' %}">logout</a>
 {% else %}
-    <a href="{% url 'login' %}">login</a>
+    <a href="{% url 'MyApp:login' %}">login</a>
 {% endif %}<br>
-<a href="{% url 'my-account' %}">my Account</a><br>
+<a href="{% url 'MyApp:my-account' %}">my Account</a><br>
 {% for book in books %}
     {{ book.title }}<br>
     <h3>Author:</h3>
@@ -26,10 +26,10 @@
     <h3>Rate</h3>
     {{ book.avg_rate }}
     {% for i in '12345' %}
-        <a href="{% url 'add-rate' rate=i book_id=book.id %}">rate {{i}}</a>
+        <a href="{% url 'MyApp:add-rate' rate=i book_id=book.id %}">rate {{i}}</a>
     {% endfor %}
     <h3>Total order is {{ book.total_order }}</h3>
-    <form action="{% url 'order-book' book_id=book.id %}" method="post">
+    <form action="{% url 'MyApp:order-book' book_id=book.id %}" method="post">
         {% csrf_token %}
         <label for="count">Count</label>
         <input type="number" name="count" id="count">
@@ -42,18 +42,18 @@
         {{ comment.text }}
         {{ comment.likes }}
         {% if comment.user == user %}
-            <form action="{% url 'delete-comment' comment_id=comment.id %}" method="post">
+            <form action="{% url 'MyApp:delete-comment' comment_id=comment.id %}" method="post">
                 {% csrf_token %}
                 <input type="submit" value="delete">
             </form>
-            <form action="{% url 'update-comment' comment_id=comment.id %}" method="get">
+            <form action="{% url 'MyApp:update-comment' comment_id=comment.id %}" method="get">
                 {% csrf_token %}
                 <input type="submit" value="update">
             </form>
         {% endif %}
         <br>
     {% endfor %}
-    <form action="{% url 'add-comment' book_id=book.id %}" method="post">
+    <form action="{% url 'MyApp:add-comment' book_id=book.id %}" method="post">
         {% csrf_token %}
         <label for="comment">Comment</label>
         <textarea type="text" name="comment" id="comment" rows="5" cols="15"></textarea>

@@ -16,42 +16,42 @@ def hello(request):
     return render(request, "index.html", {"books": query_2})
 
 
-@login_required(login_url="login")
+@login_required(login_url="MyApp:login")
 def add_rate(request, rate, book_id):
     RateBookUser.objects.update_or_create(user_id=request.user.id, book_id=book_id, defaults={"rate": rate})
-    return redirect("main-page")
+    return redirect("MyApp:main-page")
 
 
-@login_required(login_url="login")
+@login_required(login_url="MyApp:login")
 def order_book(request, book_id):
     OrderBookUser.objects.create(
         count=request.POST.get("count"),
         user_id=request.user.id,
         book_id=book_id
     )
-    return redirect("main-page")
+    return redirect("MyApp:main-page")
 
 
-@login_required(login_url="login")
+@login_required(login_url="MyApp:login")
 def add_comment(request, book_id):
     Comment.objects.create(
         user_id=request.user.id,
         text=request.POST.get("comment"),
         book_id=book_id
     )
-    return redirect("main-page")
+    return redirect("MyApp:main-page")
 
 
-@login_required(login_url="login")
+@login_required(login_url="MyApp:login")
 def delete_comment(request, comment_id):
     query_set = Comment.objects.filter(id=comment_id)
     if query_set.exists():
         if query_set.first().user.id == request.user.id:
             query_set.delete()
-    return redirect("main-page")
+    return redirect("MyApp:main-page")
 
 
-@login_required(login_url="login")
+@login_required(login_url="MyApp:login")
 def update_comment(request, comment_id):
     comment_query = Comment.objects.filter(id=comment_id)
     if comment_query.exists():
@@ -59,10 +59,10 @@ def update_comment(request, comment_id):
             return render(request, "comment_form.html", {"comment": comment_query.first()})
         if request.method == "POST":
             comment_query.update(text=request.POST.get("comment"))
-    return redirect("main-page")
+    return redirect("MyApp:main-page")
 
 
-@login_required(login_url="login")
+@login_required(login_url="MyApp:login")
 def my_account(request):
     ordered_book_query_set = OrderBookUser.objects.filter(user_id=request.user.id).select_related("book").order_by("book__title")
     ordered_book_query_set = ordered_book_query_set.annotate(total_price=F("book__price") * F("count"))
@@ -73,10 +73,10 @@ def my_account(request):
     return render(request, "ordered_book.html", context)
 
 
-@login_required(login_url="login")
+@login_required(login_url="MyApp:login")
 def logout_view(request):
     logout(request)
-    return redirect("main-page")
+    return redirect("MyApp:main-page")
 
 
 def login_view(request):
@@ -87,5 +87,5 @@ def login_view(request):
         if user is not None:
             login(request, user)
         else:
-            return redirect("login")
-    return redirect("main-page")
+            return redirect("MyApp:login")
+    return redirect("MyApp:main-page")
