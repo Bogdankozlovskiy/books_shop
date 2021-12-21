@@ -18,6 +18,8 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=4, decimal_places=2, verbose_name="цена", validators=[validators.MinValueValidator(0)])
     country = models.ForeignKey("Country", on_delete=models.SET_DEFAULT, default=1)
 
+    objects = models.Manager()
+
     def __str__(self):
         return self.title
 
@@ -54,3 +56,5 @@ class Comment(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="comments")
     like = models.ManyToManyField(User)
+
+    objects = models.Manager()
