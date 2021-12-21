@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'myapp',
     'hotel',
     'api',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
