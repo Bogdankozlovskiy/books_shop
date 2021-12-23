@@ -1,5 +1,6 @@
 from django.contrib import admin
 from myapp.models import Book, Country, Comment
+from guardian.admin import GuardedModelAdmin
 
 
 class InlineCommentAdmin(admin.StackedInline):
@@ -8,8 +9,9 @@ class InlineCommentAdmin(admin.StackedInline):
     readonly_fields = ["like"]
 
 
-class BookAdmin(admin.ModelAdmin):
+class BookAdmin(GuardedModelAdmin):
     inlines = [InlineCommentAdmin]
+    list_display = ["title", "id"]
 
 
 admin.site.register(Book, BookAdmin)
