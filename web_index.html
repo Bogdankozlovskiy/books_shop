@@ -15,19 +15,20 @@
     <script>
         document.addEventListener("DOMContentLoaded", function (){
             const WebSocketClient = new WebSocket("ws://localhost:5555")
-            WebSocketClient.onopen = function (){
+            WebSocketClient.addEventListener("open", function (event){
                 let text = document.querySelector("[name=message]")
                 let button = document.querySelector("[name=submit_button]")
                 button.onclick = function (){
                     WebSocketClient.send(text.value)
                 }
-            }
-            WebSocketClient.onmessage = function (message){
+            })
+            WebSocketClient.addEventListener("close", function (event){console.log("connection is closed")})
+            WebSocketClient.addEventListener("message", function (message){
                 let message_container = document.querySelector("#message_container")
                 let newMessage = document.createElement("div")
                 newMessage.innerHTML = message.data
                 message_container.appendChild(newMessage)
-            }
+            })
         }, false)
     </script>
 </body>
