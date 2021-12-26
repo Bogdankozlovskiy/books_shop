@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (){
-    const roomName = document.URL.split("/").at(-1) || document.URL.split("/").at(-2)
+    const roomName = document.URL.split("=").at(-1)
 
     const chatSocket = new WebSocket(`ws://${window.location.host}/ws/chat/${roomName}/`);
 

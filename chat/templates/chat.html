@@ -6,7 +6,7 @@
     <title>Chat Rooms</title>
 </head>
 <body>
-    <form action="{% url 'Chat:room-redirect' %}" method="get">
+    <form action="{% url 'Chat:chat' %}" method="get">
         <label for="room_name">What chat room would you like to enter?</label><br>
         <input id="room_name" name="room_name" type="text" size="100"><br>
         <input  type="submit" value="Enter">
