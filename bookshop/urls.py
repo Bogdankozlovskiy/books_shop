@@ -27,10 +27,11 @@ urlpatterns = [
     path('shop/', include("myapp.urls")),
     path("hotel/", include("hotel.urls")),
     path("api_v1/", include("api.urls")),
+    path("chat/", include("chat.urls")),
 ]
 
 
 if settings.DEBUG:
     urlpatterns += [path('__debug__/', include(debug_toolbar.urls))] + \
-                   static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-                   # static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                   static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + \
+                   static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

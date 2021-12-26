@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'guardian',
+    'chat',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +80,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bookshop.wsgi.application'
+ASGI_APPLICATION = 'bookshop.asgi.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
