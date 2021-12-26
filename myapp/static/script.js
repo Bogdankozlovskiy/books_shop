@@ -13,6 +13,7 @@ function getCookie(name) {
     return cookieValue;
 }
 // https://youmightnotneedjquery.com/
+// https://developer.mozilla.org/en-US/docs/Web/API/Element
 
 document.addEventListener("DOMContentLoaded", function (){
     const csrf_token = getCookie('csrftoken');
