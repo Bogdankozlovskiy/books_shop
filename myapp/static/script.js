@@ -14,18 +14,18 @@ function getCookie(name) {
 }
 // https://youmightnotneedjquery.com/
 
-$("document").ready(function (){
+document.addEventListener("DOMContentLoaded", function (){
     const csrf_token = getCookie('csrftoken');
-
-    $(".like").on("click", function (){
-        let id = $(this).attr("id")
+    const buttons = document.querySelector(".like")
+    buttons.onclick = function () {
+        let id = this.getAttribute("id")
         let request = new XMLHttpRequest();
         request.open('POST', `http://localhost:8000/api_v1/add_like_to_comment_ajax/${id}/`, true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-        request.onload = function (){
-            $(`#count_of${id}`).html(JSON.parse(this.response)['likes'])
+        request.onload = function () {
+            document.querySelector(`#count_of${id}`).innerHTML = JSON.parse(this.response)['likes']
         }
         request.send(`csrfmiddlewaretoken=${csrf_token}`);
-    })
 
+    }
 })
