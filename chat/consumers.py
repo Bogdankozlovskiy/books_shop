@@ -1,4 +1,6 @@
 from channels.generic.websocket import AsyncJsonWebsocketConsumer
+from channels.db import database_sync_to_async
+from django.contrib.sites.models import Site
 
 
 class ChatConsumer(AsyncJsonWebsocketConsumer):
@@ -26,11 +28,12 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
     # Receive message from WebSocket
     async def receive_json(self, content, **kwargs):
         # Send message to room group
+        site_name = (await database_sync_to_async(Site.objects.get_current)()).name
         await self.channel_layer.group_send(
             self.room_group_name,
             {
                 'type': 'chat_message',
-                'message': content['message']
+                'message': content['message'] + site_name
             }
         )
 

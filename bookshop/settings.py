@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'guardian',
     'chat',
     'channels',
+    'django.contrib.sites'
 ]
 
 MIDDLEWARE = [
@@ -83,10 +84,11 @@ TEMPLATES = [
 ASGI_APPLICATION = 'bookshop.asgi.application'
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-        },
+        # 'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+        # 'CONFIG': {
+        #     "hosts": [('127.0.0.1', 6379)],
+        # },
     },
 }
 
@@ -140,7 +142,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = BASE_DIR / 'static'
+
+SITE_ID = 1
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = "media"
