@@ -1,4 +1,4 @@
-<!-- chat/templates/chat/room.html -->
+<!-- room.html -->
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,9 @@
     <script type="application/javascript" src="{% static 'socket.js' %}"></script>
 </head>
 <body>
+    <label for="chat-log">All Messages</label><br>
     <textarea id="chat-log" cols="100" rows="20"></textarea><br>
+    <label for="chat-message-input">new message</label><br>
     <input id="chat-message-input" type="text" size="100"><br>
     <input id="chat-message-submit" type="button" value="Send">
 </body>
