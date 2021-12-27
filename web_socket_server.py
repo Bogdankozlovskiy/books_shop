@@ -1,7 +1,7 @@
 import websockets
 import asyncio
 from websockets.exceptions import ConnectionClosedOK, ConnectionClosedError
-
+# https://www.rfc-editor.org/rfc/rfc6455
 
 all_client = []
 
