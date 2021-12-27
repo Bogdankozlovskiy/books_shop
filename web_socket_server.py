@@ -10,8 +10,9 @@ async def send_message(message):
     for client in all_client:
         try:
             await client.send(message)
-        except ConnectionClosedOK:
+        except (ConnectionClosedOK, ConnectionClosedError):
             all_client.remove(client)
+            print("we lost connection")
 
 
 async def accept_new_client(client_socket, path):
