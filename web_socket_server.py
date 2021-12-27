@@ -1,6 +1,6 @@
 import websockets
 import asyncio
-from websockets.exceptions import ConnectionClosedOK
+from websockets.exceptions import ConnectionClosedOK, ConnectionClosedError
 
 
 all_client = []
@@ -23,8 +23,12 @@ async def accept_new_client(client_socket, path):
         except ConnectionClosedOK:
             await send_message("one client live us")
             break
-        print("client send:", new_message)
-        await send_message(new_message)
+        except ConnectionClosedError:
+            print("we lost connection")
+            break
+        else:
+            print("client send:", new_message)
+            await send_message(new_message)
 
 
 async def start_server():
