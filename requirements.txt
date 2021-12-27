@@ -40,3 +40,10 @@ typing_extensions==4.0.1
 urllib3==1.26.7
 websockets==10.1
 zope.interface==5.4.0
+
+
+
+# Poetry init
+# Poetry update
+# Poetry show --tree
+# Poetry add <lib>
