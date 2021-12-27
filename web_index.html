@@ -18,9 +18,7 @@
             WebSocketClient.addEventListener("open", function (event){
                 let text = document.querySelector("[name=message]")
                 let button = document.querySelector("[name=submit_button]")
-                button.onclick = function (){
-                    WebSocketClient.send(text.value)
-                }
+                button.onclick = function (){WebSocketClient.send(text.value)}
             })
             WebSocketClient.addEventListener("close", function (event){console.log("connection is closed")})
             WebSocketClient.addEventListener("message", function (message){
