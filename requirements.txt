@@ -1,50 +1,54 @@
 aiohttp==3.8.1
-aioredis @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/57/b1/ed/7ef24be02f4faed2e69ac3c9230da6819de61a06b0a6ecc2d007c3e19e/aioredis-1.3.1-py3-none-any.whl
-aiosignal @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/d3/d7/92/f7aa28b137b4b00e62270f58330cedde299917a71a3c00ee64913aa3c2/aiosignal-1.2.0-py3-none-any.whl
+aiosignal==1.2.0
+appnope==0.1.2
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
-asgiref @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/c3/92/1c/3d42ce7ad1e9e2aa1621c3fa8ebc5e21bd880a768bd691fb4f0356baa8/asgiref-3.4.1-py3-none-any.whl
+asgiref==3.4.1
 async-timeout==4.0.2
 attrs==21.3.0
-Automat @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/b8/e5/0e/e86ac85851dbf0701b64dc7a0c07c823d0194d7e31a24f1ba60bed622d/Automat-20.2.0-py2.py3-none-any.whl
 backcall==0.2.0
-bidict @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/ea/e0/28/4bf8240c7c83c097ab97638bb408c0fd39c422bec73a5eb71f3da04168/bidict-0.21.4-py3-none-any.whl
+bleach==4.1.0
 CacheControl==0.12.10
 certifi==2021.10.8
-cffi @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/64/59/35/9cc31c7226ca68e026fefff4b787b447689301714eecc03b78668a48ae/cffi-1.15.0-cp39-cp39-macosx_10_9_x86_64.whl
-channels @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/12/9c/e7/f4252a50e125ab7ee58d50982122a1590d34c915b752ba13e03eedadd1/channels-3.0.4-py3-none-any.whl
+cffi==1.15.0
 charset-normalizer==2.0.9
 cleo==0.8.1
+clikit==0.6.2
 coreapi==2.3.3
 coreschema==0.0.4
 crashtest==0.3.1
 cryptography==36.0.1
-daphne @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/31/da/f5/87c148f67573404dad7fcd2c73264a32e1ef99902c3750d8f9473eb69a/daphne-3.0.2-py3-none-any.whl
+debugpy==1.5.1
+decorator==5.1.0
 defusedxml==0.7.1
 Django==3.2.9
-django-debug-toolbar @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/58/74/61/f227b9dce16c03b515318bfdeadae6fcd22107ed69534375ef40a05f67/django_debug_toolbar-3.2.4-py3-none-any.whl
+django-debug-toolbar==3.2.4
 django-extensions==3.1.5
-django-filter @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/a9/c6/98/7cc5361bf7dd56b5125c00f61aaf4c4a2c94e438288814f48d6cc4fe3b/django_filter-21.1-py3-none-any.whl
+django-filter==21.1
 django-guardian==2.4.0
 django-templated-mail==1.1.1
-djangorestframework @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/e1/57/21/bfde361af294b9c9cd77dcab0182e58c2938fcee29a4e5724ef4fed0e0/djangorestframework-3.12.4-py3-none-any.whl
+djangorestframework==3.13.1
 djangorestframework-simplejwt==4.8.0
 djoser==2.1.0
 entrypoints==0.3
-frozenlist @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/7e/94/50/9a9059696871d52d8933fa24931a2854b46367652bf7b6ee9622fbc94a/frozenlist-1.2.0-cp39-cp39-macosx_10_9_x86_64.whl
+frozenlist==1.2.0
 gevent==21.12.0
 greenlet==1.1.2
-hiredis @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/d4/c2/19/8ca29df3d3dbbaed6ec4dda6a1ac5382ce2543a5945e89d074741439d1/hiredis-2.0.0-cp39-cp39-macosx_10_9_x86_64.whl
 html5lib==1.1
 idna==3.3
+importlib-resources==5.4.0
+ipykernel==6.6.0
 ipython==7.30.1
 ipython-genutils==0.2.0
 ipywidgets==7.6.5
 itypes==1.2.0
+jedi==0.18.1
 Jinja2==3.0.3
 jsonschema==4.3.2
 jupyter==1.0.0
 jupyter-client==7.1.0
+jupyter-console==6.4.0
+jupyter-core==4.9.1
 jupyterlab-pygments==0.1.2
 jupyterlab-widgets==1.0.2
 keyring==21.8.0
@@ -52,44 +56,57 @@ lockfile==0.12.2
 MarkupSafe==2.0.1
 matplotlib-inline==0.1.3
 mistune==0.8.4
+msgpack==1.0.3
 multidict==5.2.0
 nbclient==0.5.9
+nbconvert==6.3.0
 nbformat==5.1.3
 nest-asyncio==1.5.4
+notebook==6.4.6
 oauthlib==3.1.1
+packaging==21.3
+pandocfilters==1.5.0
+parso==0.8.3
 pastel==0.2.1
 pexpect==4.8.0
-Pillow @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/05/92/61/601fb1306a1b88900c4d9e78ec9d54ee3b005ea76b130577b339a802b1/Pillow-8.4.0-cp39-cp39-macosx_10_10_x86_64.whl
+pickleshare==0.7.5
+Pillow==8.4.0
 pkginfo==1.8.2
 platformdirs==2.4.1
 prometheus-client==0.12.0
-pyasn1-modules @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/dd/b8/4f/b56433e0354274a31074995e01b8671751e9f0ed0001f5254e5b03a54f/pyasn1_modules-0.2.8-py2.py3-none-any.whl
-pycparser @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/fb/06/dd/b5671b47dd0597663bc05d60d324bb315a8cef56f3179b8f9067f88e50/pycparser-2.21-py2.py3-none-any.whl
+prompt-toolkit==3.0.24
+ptyprocess==0.7.0
+pycparser==2.21
+Pygments==2.10.0
 PyJWT==2.3.0
 pylev==1.4.0
-pyOpenSSL @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/d7/a6/7d/bcb4508bbca3df8cfcb5be06a29e31917a1d3992516ae551e630aa49f4/pyOpenSSL-21.0.0-py2.py3-none-any.whl
 pyparsing==3.0.6
 pyrsistent==0.18.0
-python-socketio @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/72/0d/3c/a6d6448ac700ebce668c17cec0c23207d673bf3a8c3ffd0237acfb70c3/python_socketio-5.5.0-py3-none-any.whl
+python-dateutil==2.8.2
 python3-openid==3.2.0
-pytz @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/3e/f3/dd/6629bf5ed0a970a128e0a015f2af3b67280e749a56fdaabdaa06d5fc6b/pytz-2021.3-py2.py3-none-any.whl
+pytz==2021.3
 pyzmq==22.3.0
+qtconsole==5.2.2
 QtPy==2.0.0
 requests==2.26.0
 requests-oauthlib==1.3.0
 requests-toolbelt==0.9.1
+Send2Trash==1.8.0
 six==1.16.0
 social-auth-app-django==4.0.0
 social-auth-core==4.1.0
 sqlparse==0.4.2
 terminado==0.12.1
-txaio @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/fa/08/32/c860d7ebf60bd51dfd8454092f6b968fd7ad9145276e7c651b6c7e088b/txaio-21.2.1-py2.py3-none-any.whl
-typing_extensions @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/88/68/28/f1a10f89c5267ca2c8a3c0e79c45230a866cd7c52d295e556597219c54/typing_extensions-4.0.1-py3-none-any.whl
+testpath==0.5.0
+tornado==6.1
+traitlets==5.1.1
 uritemplate==4.1.1
 urllib3==1.26.7
 wcwidth==0.2.5
+webencodings==0.5.1
 websockets==10.1
 widgetsnbextension==3.5.2
-yarl @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/be/64/bc/6045b0ef5702217e72067b8b60f36f6c099f579426e06387bae4341940/yarl-1.7.2-cp39-cp39-macosx_10_9_x86_64.whl
+yarl==1.7.2
+zipp==3.6.0
 zope.event==4.5.0
-zope.interface @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/f9/a1/04/10096190d1180e3062186ce969f960ac87f924c80f0b0c6f7bd8d18293/zope.interface-5.4.0-cp39-cp39-macosx_10_14_x86_64.whl
+zope.interface==5.4.0
