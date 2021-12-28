@@ -15,6 +15,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function (){
             const WebSocketClient = new WebSocket("ws://localhost:5555")
+            const socket = io("http://localhost:5555")
             WebSocketClient.addEventListener("open", function (event){
                 let text = document.querySelector("[name=message]")
                 let button = document.querySelector("[name=submit_button]")
@@ -29,5 +30,6 @@
             })
         }, false)
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
 </body>
 </html>
