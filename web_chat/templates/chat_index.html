@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{% static 'web_socket_client.js' %}"></script>
+</head>
+<body>
+    <div id="message-container">
+        {% for message in messages %}
+            <h3>{{ message.text }}</h3>
+            <h3>{{ message.date }}</h3>
+            <hr>
+        {% endfor %}
+    </div>
+
+
+
+        <label for="text">Text</label><br>
+        <textarea name="text" id="text" cols="100" rows="4"></textarea><br>
+        <input type="button" value="OK" id="submit-button">
+
+</body>
+</html>

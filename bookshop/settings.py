@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'guardian',
+    'django_extensions',
+    "djoser",
+    "web_chat",
 ]
 
 MIDDLEWARE = [

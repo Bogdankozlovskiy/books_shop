@@ -1,6 +1,6 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.views import APIView
-from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView, ListCreateAPIView
+from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView, ListCreateAPIView, RetrieveDestroyAPIView, DestroyAPIView, RetrieveAPIView, RetrieveUpdateAPIView, UpdateAPIView
 from rest_framework.response import Response
 from rest_framework.authentication import BasicAuthentication, SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser, BasePermission
@@ -15,6 +15,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework import status
 from guardian.shortcuts import assign_perm, get_perms, remove_perm, get_objects_for_user
 from guardian.utils import get_40x_or_None
+from web_chat.serializers import ChatMessageSerializer
 
 
 # class HasPermission(BasePermission):
@@ -145,3 +146,6 @@ class APiViewBook(ModelViewSet):
             return DetailBookSerializer
         return BookSerializer
 
+
+class APICreateMessage(CreateAPIView):
+    serializer_class = ChatMessageSerializer
