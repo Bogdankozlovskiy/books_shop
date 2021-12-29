@@ -17,6 +17,10 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             self.channel_name
         )
         await self.accept()
+        if self.scope['user'].is_authenticated:
+            await self.receive_json({"message": f"say hello to {self.scope['user'].username}"})
+        else:
+            await self.receive_json({"message": f"say hello to Anonymous"})
 
     async def disconnect(self, close_code):
         # Leave room group
@@ -24,6 +28,10 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             self.room_group_name,
             self.channel_name
         )
+        if self.scope['user'].is_authenticated:
+            await self.receive_json({"message": f"say good buy to {self.scope['user'].username}"})
+        else:
+            await self.receive_json({"message": f"say good buy to Anonymous"})
 
     # Receive message from WebSocket
     async def receive_json(self, content, **kwargs):
