@@ -149,3 +149,6 @@ class APiViewBook(ModelViewSet):
 
 class APICreateMessage(CreateAPIView):
     serializer_class = ChatMessageSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)

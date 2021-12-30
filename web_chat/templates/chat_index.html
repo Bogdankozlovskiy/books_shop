@@ -11,6 +11,7 @@
         {% for message in messages %}
             <h3>{{ message.text }}</h3>
             <h3>{{ message.date }}</h3>
+            <h3>{{ message.user.username }}</h3>
             <hr>
         {% endfor %}
     </div>
