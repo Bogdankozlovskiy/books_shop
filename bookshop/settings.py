@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django_extensions',
     "djoser",
     "web_chat",
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bookshop.wsgi.application'
+ASGI_APPLICATION = 'bookshop.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -91,6 +92,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    },
 }
 
 # Password validation
