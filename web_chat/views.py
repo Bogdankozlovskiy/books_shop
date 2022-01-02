@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from web_chat.models import ChatMessage
 from web_chat.serializers import ChatMessageSerializer
+# from django.db import connection
+# ChatMessage.objects.raw
+from django.db.transaction import atomic, non_atomic_requests, mark_for_rollback_on_error, savepoint, rollback, savepoint_rollback, on_commit, set_rollback, get_rollback
 
 
 def index(request):
