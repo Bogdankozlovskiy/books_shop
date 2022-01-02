@@ -4,7 +4,7 @@ from web_chat.serializers import ChatMessageSerializer
 
 
 def index(request):
-    messages = ChatMessage.objects.all()
+    messages = ChatMessage.objects.all().select_related("user").only("date", "text", "user__username")
     return render(request, "chat_index.html", {"messages": messages})
 
 

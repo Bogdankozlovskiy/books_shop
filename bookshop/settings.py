@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -60,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # "django.middleware.cache.FetchFromCacheMiddleware",
 ]
 
 ROOT_URLCONF = 'bookshop.urls'
@@ -165,6 +167,20 @@ CACHES = {
         "LOCATION": "redis://localhost:6379/1",
     }
 }
+
+# SESSION_ENGINE = 'redis_sessions.session'
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+# SESSION_ENGINE = 'django.contrib.sessions.backends.cachced_db'
+# SESSION_REDIS = {
+#     'host': 'localhost',
+#     'port': 6379,
+#     'db': 0,
+#     'password': 'password',
+#     'prefix': 'session',
+#     'socket_timeout': 1,
+#     'retry_on_timeout': False
+# }
+
 # CELERY_BEAT_SCHEDULE = {
 #     'add-every-30-seconds': {
 #         'task': 'myapp.tasks.add',
