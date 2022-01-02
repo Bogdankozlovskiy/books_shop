@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     "web_chat",
     'channels',
     "django_celery_beat",
-    "django_celery_results"
+    "django_celery_results",
+    "rest_framework_simplejwt"
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,15 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'guardian.backends.ObjectPermissionBackend',
 )
-
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        # "rest_framework.authentication.SessionAuthentication",
+        # "rest_framework.authentication.BasicAuthentication",
+        # "rest_framework.authentication.TokenAuthentication",
+        # "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework_simplejwt.authentication.JWTTokenUserAuthentication",
+    ]
+}
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -161,10 +170,10 @@ CELERY_BROKER_URL = "redis://localhost:6379/0"
 
 CACHES = {
     'default': {
-        # 'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        # 'LOCATION': 'my_cache_table',
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://localhost:6379/1",
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_cache_table',
+        # "BACKEND": "django_redis.cache.RedisCache",
+        # "LOCATION": "redis://localhost:6379/1",
     }
 }
 

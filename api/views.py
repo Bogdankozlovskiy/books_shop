@@ -71,7 +71,7 @@ class APIListBook(ListAPIView):
     #     "price": ["gte", "lte"],
     #     "publish_date": ["gte", "lte"]
     # }
-    authentication_classes = [SessionAuthentication]
+    # authentication_classes = [SessionAuthentication]
     # permission_classes = [IsAuthenticated]
 
     # def get_queryset(self):
@@ -81,7 +81,7 @@ class APIListBook(ListAPIView):
     # def get_queryset(self):
     #     return get_objects_for_user(self.request.user, "myapp.view_book", self.queryset)
     def get(self, request, *args, **kwargs):
-        queryset = get_objects_for_user(request.user, "myapp.view_book", self.queryset.all())
+        queryset = get_objects_for_user(request.user, "myapp.view_book", self.queryset.all(), use_groups=False, with_superuser=False)
         serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data, status=200)
 
@@ -97,7 +97,7 @@ class APIBookDetail(RetrieveUpdateDestroyAPIView):
         Prefetch("authors", query_authors)
     )
     # permission_classes = [IsAuthenticated, HasPermission]
-    authentication_classes = [SessionAuthentication]
+    # authentication_classes = [SessionAuthentication]
 
     def get(self, request, *args, **kwargs):
         obj = self.queryset.get(pk=kwargs['pk'])
