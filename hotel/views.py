@@ -6,6 +6,11 @@ from hotel.utils import convert_str_date_to_timezone_date
 
 
 def search_room(request, room_id=None):
+    """
+    @param request: blabla
+    @param room_id: bal bla
+    @return: bla
+    """
     if not request.GET and request.method == "GET":
         return render(request, "search_room.html")
     if request.method == "POST":
