@@ -36,13 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',  # usefull storage temporary data in session/cookies
     'django.contrib.staticfiles',
     "django.contrib.humanize",
-    # "django.contrib.sites",
-    # "django.contrib.sitemaps",  # for croulers
-    # "django.contrib.redirects",
+    # "django.contrib.sites",        # list of sites
+    # "django.contrib.sitemaps",     # for croulers
+    # "django.contrib.redirects",    # redirects function under crack
     # "django.contrib.postgres",
-    # "django.contrib.flatpages",
+    # "django.contrib.flatpages",    # CMS на минималках
     # "django.contrib.syndication",  # RSS
-    # "django.contrib.admindocs",  build documentation for all apps and show it in admin panel
+    # "django.contrib.admindocs",    # build documentation for all apps and show it in admin panel
     'debug_toolbar',
     'myapp',
     'hotel',
