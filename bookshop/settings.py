@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     # "django.contrib.postgres",
     # "django.contrib.flatpages",
     # "django.contrib.syndication",  # RSS
-    # "django.contrib.admindocs",
+    # "django.contrib.admindocs",  build documentation for all apps and show it in admin panel
     'debug_toolbar',
     'myapp',
     'hotel',
