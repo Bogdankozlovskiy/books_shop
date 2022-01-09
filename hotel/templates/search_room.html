@@ -1,3 +1,4 @@
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,18 @@
 {{ message.tags }}
 {{ message.message }}
 {% endfor %}
+<br>
+{{ digit|apnumber }}
+<br>
+{{ intcomad|intcomma }}
+<br>
+{{ bigd|intword }}
+<br>
+{{ dnow|naturalday }}
+<br>
+{{ dnow|naturaltime }}
+<br>
+{{ digit|ordinal }}
   <form action="{% url 'Hotel:search-room' %}" method="get">
       <label for="start_date">Start Date</label>
       <input type="date" name="start_date" id="start_date"><br>

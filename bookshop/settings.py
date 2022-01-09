@@ -33,9 +33,16 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.messages',  # usefull storage temporary data in session/cookies
     'django.contrib.staticfiles',
     "django.contrib.humanize",
+    # "django.contrib.sites",
+    # "django.contrib.sitemaps",  # for croulers
+    # "django.contrib.redirects",
+    # "django.contrib.postgres",
+    # "django.contrib.flatpages",
+    # "django.contrib.syndication",  # RSS
+    # "django.contrib.admindocs",
     'debug_toolbar',
     'myapp',
     'hotel',
