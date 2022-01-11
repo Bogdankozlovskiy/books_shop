@@ -16,3 +16,4 @@ application = ProtocolTypeRouter({
         )
     ),
 })
+#  uvicorn bookshop.asgi:application --workers 5 --use-colors
