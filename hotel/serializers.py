@@ -1,7 +1,21 @@
 from rest_framework.exceptions import ValidationError
-from rest_framework.serializers import ModelSerializer, IntegerField, FloatField, ChoiceField, CharField
+from rest_framework.serializers import ModelSerializer, IntegerField, FloatField, ChoiceField, CharField, SerializerMethodField
 from guardian.models import UserObjectPermission
 from hotel.models import OrderRoom
+
+
+class ShowPermissionSerializer(ModelSerializer):
+    user_name = CharField(source="user.username")
+    permission_name = CharField(source="permission.name")
+    object_body = SerializerMethodField()
+
+    class Meta:
+        model = UserObjectPermission
+        fields = ["id", "user_name", "object_body", "permission_name"]
+
+    def get_object_body(self, permission):
+        order_room = permission.content_type.model_class().objects.get(pk=permission.object_pk)
+        return str(order_room)
 
 
 class GuardianSerializer(ModelSerializer):

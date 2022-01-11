@@ -27,6 +27,7 @@ class OrderRoom(models.Model):
     class Meta:
         verbose_name = "бронь"
         verbose_name_plural = "брони"
+        get_latest_by = "date"
 
     room = models.ForeignKey(Room, on_delete=models.CASCADE, verbose_name="Комната", related_name="ordered")
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="заказчик", related_name="ordered")

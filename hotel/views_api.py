@@ -1,18 +1,46 @@
 from django.db.models.functions import ExtractDay
 from rest_framework.filters import OrderingFilter
+from rest_framework.mixins import DestroyModelMixin, RetrieveModelMixin
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import SessionAuthentication
+from rest_framework.generics import GenericAPIView
+from rest_framework.viewsets import GenericViewSet
+from rest_framework import status
 from hotel.models import OrderRoom
 from hotel.serializers import OrderedRoomSerializer, OrderedRoomDetailSerializer, OrderedRoomCreateSerializr, \
-    GuardianSerializer
+    GuardianSerializer, ShowPermissionSerializer
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
+from rest_framework.response import Response
 from django.db.models import F
 from hotel.utils import MyCustomFilter
 from guardian.shortcuts import assign_perm, get_objects_for_user
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, ContentType
+from guardian.models.models import UserObjectPermission
+from django.db.models import Q
 # HW: start check createing of Order Room, Can it be possible
 # HW create new end point for removing permission
 
+
+class DeletePermissionAPIView(RetrieveModelMixin, DestroyModelMixin, GenericViewSet):
+    permission_classes = [IsAuthenticated]
+    serializer_class = ShowPermissionSerializer
+    queryset = UserObjectPermission.objects.all()
+
+    def list(self, request):
+        orders = OrderRoom.objects.filter(user=request.user).values_list("id", flat=True)
+        content_type = ContentType.objects.get(app_label="hotel", model="orderroom")
+        permissions = UserObjectPermission.objects.filter(~Q(user=request.user) & Q(content_type=content_type, object_pk__in=list(orders)))
+        serializer = self.serializer_class(permissions, many=True)
+        return Response(serializer.data)
+
+    def get_queryset(self):
+        orders = OrderRoom.objects.filter(user=self.request.user).values_list("id", flat=True)
+        content_type = ContentType.objects.get(app_label="hotel", model="orderroom")
+        permissions = self.queryset.filter(
+            ~Q(user=self.request.user) &
+            Q(content_type=content_type, object_pk__in=list(orders))
+        )
+        return permissions
 
 # class ShareGuardianPermission(GenericAPIView):
 #     serializer_class = GuardianSerializer
@@ -50,6 +78,7 @@ class APICreateOrderedRoom(CreateAPIView):
     authentication_classes = [SessionAuthentication]
 
     def perform_create(self, serializer):
+        # do something or Not
         instance = serializer.save(user_id=self.request.user.id)
         assign_perm("hotel.view_orderroom", self.request.user, instance)
 
