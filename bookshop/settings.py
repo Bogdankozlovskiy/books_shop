@@ -108,9 +108,17 @@ DATABASES = {
     }
 }
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels.layers.InMemoryChannelLayer'
+#     },
+# }
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
     },
 }
 
@@ -136,7 +144,21 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'guardian.backends.ObjectPermissionBackend',
 )
-
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+#         'LOCATION': 'my_cache_table',
+#         'TIMEOUT': 10,
+#     }
+# }
+CACHES = {
+    'default': {
+        'BACKEND': 'redis_cache.RedisCache',
+        'LOCATION': 'redis://localhost:6379',
+        'TIMEOUT': 10,
+    }
+}
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

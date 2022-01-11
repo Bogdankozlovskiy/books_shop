@@ -19,6 +19,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
 
     async def receive_json(self, content, **kwargs):
         if self.scope.get("user").is_authenticated:
+            print("receive_json")
             serializer = ChatMessageSerializer(data=content)
             serializer.is_valid(raise_exception=True)
             await sync_to_async(serializer.save)(user=self.scope.get("user"))
@@ -32,6 +33,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         print("receive")
 
     async def chat_message(self, event):
+        print("chat_message")
         message = event['message']
         await self.send_json(
             content=message

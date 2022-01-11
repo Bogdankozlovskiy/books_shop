@@ -4,14 +4,19 @@ from django.shortcuts import render, redirect
 from myapp.models import Book, RateBookUser, OrderBookUser, Comment
 from django.db.models import Avg, Sum, Prefetch, Count, F
 from django.http import JsonResponse
+from django.core.cache import cache
 
 
 def hello(request):
+    all_books = cache.get("all_books")
+    if all_books is not None:
+        return render(request, "index.html", {"books": all_books})
     query_1 = Comment.objects.annotate(likes=Count("like")).select_related("user")
     query_2 = Book.objects.annotate(
         avg_rate=Avg("rate_book_user_book__rate"),
         total_order=Sum("order_book_user_book__count")
     ).prefetch_related("authors", Prefetch("comments", query_1)).select_related("country")
+    cache.set("all_books", query_2.all())
     return render(request, "index.html", {"books": query_2})
 
 
