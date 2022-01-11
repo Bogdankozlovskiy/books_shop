@@ -21,6 +21,7 @@ Werkzeug = "^2.0.2"
 django-redis-cache = "^3.0.0"
 uvicorn = "^0.16.0"
 channels-redis = "^3.3.1"
+websockets = "^10.1"
 
 [tool.poetry.dev-dependencies]
 
