@@ -8,7 +8,7 @@ from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 from myapp.models import Comment
 from api.serializers import BookSerializer, DetailBookSerializer, CreateBookSerializer, CommentSerializer
 from myapp.models import Book
-from django.db.models import Prefetch, Avg, Sum
+from django.db.models import Prefetch, Avg, Sum, Count
 from django.contrib.auth.models import User
 from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.pagination import PageNumberPagination
@@ -156,4 +156,4 @@ class APICreateMessage(CreateAPIView):
 
 class APIVIEWComment(RetrieveAPIView):
     serializer_class = CommentSerializer
-    queryset = Comment.objects.all()
+    queryset = Comment.objects.annotate(Count("like"))

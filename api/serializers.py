@@ -6,9 +6,12 @@ from myapp.models import Comment
 
 
 class CommentSerializer(ModelSerializer):
+    likes = IntegerField(source="like__count")
+
     class Meta:
         model = Comment
         fields = "__all__"
+        extra_fields = ['likes']
 
 
 class UserSerializer(ModelSerializer):
