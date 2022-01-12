@@ -15,8 +15,8 @@ def hello(request):
     query_2 = Book.objects.annotate(
         avg_rate=Avg("rate_book_user_book__rate"),
         total_order=Sum("order_book_user_book__count")
-    ).prefetch_related("authors", Prefetch("comments", query_1)).select_related("country")
-    cache.set("all_books", query_2.all())
+    ).prefetch_related("authors", Prefetch("comments", query_1)).select_related("country").all()
+    cache.set("all_books", query_2)
     return render(request, "index.html", {"books": query_2})
 
 
