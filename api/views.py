@@ -6,7 +6,7 @@ from rest_framework.authentication import BasicAuthentication, SessionAuthentica
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser, BasePermission
 from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 from myapp.models import Comment
-from api.serializers import BookSerializer, DetailBookSerializer, CreateBookSerializer
+from api.serializers import BookSerializer, DetailBookSerializer, CreateBookSerializer, CommentSerializer
 from myapp.models import Book
 from django.db.models import Prefetch, Avg, Sum
 from django.contrib.auth.models import User
@@ -82,7 +82,7 @@ class APIListBook(ListAPIView):
     #     return get_objects_for_user(self.request.user, "myapp.view_book", self.queryset)
     def get(self, request, *args, **kwargs):
         queryset = get_objects_for_user(request.user, "myapp.view_book", self.queryset.all())
-        serializer = self.serializer_class(queryset, many=True)
+        serializer = self.serializer_class(queryset, many=True, context={"request": request})
         return Response(serializer.data, status=200)
 
 
@@ -152,3 +152,8 @@ class APICreateMessage(CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+
+class APIVIEWComment(RetrieveAPIView):
+    serializer_class = CommentSerializer
+    queryset = Comment.objects.all()
