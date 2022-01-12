@@ -16,6 +16,7 @@ from rest_framework import status
 from guardian.shortcuts import assign_perm, get_perms, remove_perm, get_objects_for_user
 from guardian.utils import get_40x_or_None
 from web_chat.serializers import ChatMessageSerializer
+from rest_framework_simplejwt.authentication import JWTTokenUserAuthentication
 
 
 # class HasPermission(BasePermission):
