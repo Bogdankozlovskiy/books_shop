@@ -72,8 +72,7 @@ class APIListBook(ListAPIView):
     #     "price": ["gte", "lte"],
     #     "publish_date": ["gte", "lte"]
     # }
-    authentication_classes = [SessionAuthentication]
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     # def get_queryset(self):
     #     if self.request.user.has_perm("myapp.view_book"):

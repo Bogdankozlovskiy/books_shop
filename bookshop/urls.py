@@ -27,7 +27,8 @@ urlpatterns = [
     path('shop/', include("myapp.urls")),
     path("hotel/", include("hotel.urls")),
     path("api_v1/", include("api.urls")),
-    path("auth/", include("djoser.urls.base")),
+    # path("auth/", include("djoser.urls.base")),
+    path("auth/", include("djoser.urls.jwt")),
     path("auth/", include("djoser.urls.authtoken")),
     path("auth/", include("rest_framework.urls")),
     path("chat/", include("web_chat.urls"))
