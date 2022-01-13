@@ -16,7 +16,7 @@ from rest_framework import status
 from guardian.shortcuts import assign_perm, get_perms, remove_perm, get_objects_for_user
 from guardian.utils import get_40x_or_None
 from web_chat.serializers import ChatMessageSerializer
-from rest_framework_simplejwt.authentication import JWTTokenUserAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication, JWTTokenUserAuthentication
 
 
 # class HasPermission(BasePermission):
@@ -73,7 +73,7 @@ class APIListBook(ListAPIView):
     #     "publish_date": ["gte", "lte"]
     # }
     permission_classes = [IsAuthenticated]
-
+    authentication_classes = [JWTTokenUserAuthentication]
     # def get_queryset(self):
     #     if self.request.user.has_perm("myapp.view_book"):
     #         return self.queryset
