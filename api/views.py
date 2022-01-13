@@ -73,7 +73,7 @@ class APIListBook(ListAPIView):
     #     "publish_date": ["gte", "lte"]
     # }
     permission_classes = [IsAuthenticated]
-    authentication_classes = [JWTTokenUserAuthentication]
+    authentication_classes = [JWTTokenUserAuthentication, SessionAuthentication, TokenAuthentication]
     # def get_queryset(self):
     #     if self.request.user.has_perm("myapp.view_book"):
     #         return self.queryset
@@ -81,7 +81,7 @@ class APIListBook(ListAPIView):
     # def get_queryset(self):
     #     return get_objects_for_user(self.request.user, "myapp.view_book", self.queryset)
     def get(self, request, *args, **kwargs):
-        queryset = get_objects_for_user(request.user, "myapp.view_book", self.queryset.all())
+        queryset = get_objects_for_user(request.user, "myapp.view_book", self.queryset.all(), with_superuser=False, use_groups=False, accept_global_perms=False)
         serializer = self.serializer_class(queryset, many=True, context={"request": request})
         return Response(serializer.data, status=200)
 
