@@ -5,6 +5,8 @@ from rest_framework.response import Response
 from rest_framework.authentication import BasicAuthentication, SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser, BasePermission
 from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
+
+from api.jwt_user_model import MyCustomJWTAuthentication
 from myapp.models import Comment
 from api.serializers import BookSerializer, DetailBookSerializer, CreateBookSerializer, CommentSerializer
 from myapp.models import Book
@@ -16,8 +18,7 @@ from rest_framework import status
 from guardian.shortcuts import assign_perm, get_perms, remove_perm, get_objects_for_user
 from guardian.utils import get_40x_or_None
 from web_chat.serializers import ChatMessageSerializer
-from rest_framework_simplejwt.authentication import JWTAuthentication, JWTTokenUserAuthentication
-
+from django.core.cache import cache
 
 # class HasPermission(BasePermission):
 #     def has_permission(self, request, view):
@@ -73,7 +74,7 @@ class APIListBook(ListAPIView):
     #     "publish_date": ["gte", "lte"]
     # }
     permission_classes = [IsAuthenticated]
-    authentication_classes = [JWTTokenUserAuthentication, SessionAuthentication, TokenAuthentication]
+    authentication_classes = [MyCustomJWTAuthentication]
     # def get_queryset(self):
     #     if self.request.user.has_perm("myapp.view_book"):
     #         return self.queryset
@@ -81,8 +82,12 @@ class APIListBook(ListAPIView):
     # def get_queryset(self):
     #     return get_objects_for_user(self.request.user, "myapp.view_book", self.queryset)
     def get(self, request, *args, **kwargs):
+        data = cache.get("api_book")
+        if data is not None:
+            return Response(data, status=200)
         queryset = get_objects_for_user(request.user, "myapp.view_book", self.queryset.all(), with_superuser=False, use_groups=False, accept_global_perms=False)
         serializer = self.serializer_class(queryset, many=True, context={"request": request})
+        cache.set("api_book", serializer.data, 10)
         return Response(serializer.data, status=200)
 
 
