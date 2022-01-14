@@ -16,7 +16,7 @@ def hello(request):
         avg_rate=Avg("rate_book_user_book__rate"),
         total_order=Sum("order_book_user_book__count")
     ).prefetch_related("authors", Prefetch("comments", query_1)).select_related("country").all()
-    cache.set("all_books", query_2)
+    cache.set("all_books", query_2, 10)
     return render(request, "index.html", {"books": query_2})
 
 
