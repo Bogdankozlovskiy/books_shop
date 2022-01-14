@@ -23,7 +23,8 @@ SECRET_KEY = 'django-insecure-bn1+94vm)z+rnnx0&ih8gwa-h5zfj8*8w^p7$*e5hgg^$1jc=d
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+# loadtest -n 200 -c 5 http:127.0.0.1:8000/hotel/api_v1/list_ordered_room/
+# uvicorn --workers 5 bookshop.asgi:application
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 # Application definition
