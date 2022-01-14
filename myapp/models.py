@@ -51,6 +51,9 @@ class Country(models.Model):
 
 
 class Comment(models.Model):
+    class Meta:
+        order_with_respect_to = 'book'
+
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments")
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
