@@ -13,5 +13,5 @@ urlpatterns = [
     path("logout/", views.logout_view, name="logout"),
     path("login/", views.login_view, name="login"),
     path("add_like_to_comment/<int:comment_id>/", views.add_like_to_comment, name="add-like-to-comment"),
-    path("add_like_to_comment_ajax/<int:comment_id>/", views.add_like_to_comment_ajax)
+    path("add_like_to_comment_ajax/<int:comment_id>/", views.add_like_to_comment_ajax)  # int, str, slug, uuid, path
 ]
