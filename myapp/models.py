@@ -1,6 +1,11 @@
 from django.core import validators
 from django.db import models
 from django.contrib.auth.models import User
+# from functools import partial
+from django.dispatch import receiver, Signal
+
+
+my_signal = Signal(providing_args=["a", "b"], use_caching=True)
 
 
 class Book(models.Model):
@@ -61,3 +66,34 @@ class Comment(models.Model):
     like = models.ManyToManyField(User)
 
     objects = models.Manager()
+
+    def save(self, **kwargs):
+        my_signal.send(sender=self.__class__, a=5, b=6)
+        data = super().save(**kwargs)
+        return data
+
+
+@receiver(models.signals.post_save)
+def test_1(sender, **kwargs):
+    print("test_1")
+    # print(row)
+    print(sender)
+    print(kwargs)
+    print("test_1")
+
+
+# models.signals.post_save.connect(partial(test_1, row=1), sender=Comment, dispatch_uid=1)
+# models.signals.pre_save.connect(partial(test_1, row=2), sender=Comment, dispatch_uid=2)
+#
+# models.signals.post_delete.connect(partial(test_1, row=3), sender=Comment, dispatch_uid=3)
+# models.signals.pre_delete.connect(partial(test_1, row=4), sender=Comment, dispatch_uid=4)
+#
+# models.signals.pre_init.connect(partial(test_1, row=5), sender=Comment, dispatch_uid=5)
+# models.signals.post_init.connect(partial(test_1, row=6), sender=Comment, dispatch_uid=6)
+#
+# models.signals.pre_migrate.connect(partial(test_1, row=7), sender=Comment, dispatch_uid=7)
+# models.signals.post_migrate.connect(partial(test_1, row=8), sender=Comment, dispatch_uid=8)
+
+# models.signals.m2m_changed.connect(partial(test_1, row=9), sender=Comment.like.through, dispatch_uid=9)
+
+my_signal.connect(test_1, sender=Comment)
