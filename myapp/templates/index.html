@@ -24,6 +24,7 @@
     <h3>Country is {{ book.country }}</h3>
     <br><br>
     {{ book.publish_date }}<br>
+    {%  now "Y-m-d" %}
     <h4>{{ book.text }}</h4>
     <h3>Price is {{book.price}}</h3>
     <h3>Rate</h3>
@@ -40,10 +41,13 @@
     </form>
     <h3>Comments</h3>
     {% for comment in book.comments.all %}
-        {{ comment.date }}
-        {{ comment.user }}
-        {{ comment.text }}
-        <i id="count_of{{ comment.id }}">{{ comment.likes }}</i>
+        {{ comment.date }}<br>
+        {{ comment.date.date|timesince:book.publish_date }}<br>
+        {{ book.publish_date|timeuntil:comment.date.date }}<br>
+        {{ comment.user }}<br>
+        {{ comment.text }}<br>
+        <i id="count_of{{ comment.id }}">{{ comment.likes|yesno }}</i>
+        <i id="count_of{{ comment.id }}">{{ comment.likes|default_if_none:0 }}</i>
         {% if comment.user == user %}
             <form action="{% url 'MyApp:delete-comment' comment_id=comment.id %}" method="post">
                 {% csrf_token %}
