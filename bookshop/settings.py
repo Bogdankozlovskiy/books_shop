@@ -60,7 +60,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.http.ConditionalGetMiddleware',  # for caching
+    # 'django.middleware.http.ConditionalGetMiddleware',  # for caching
     # 'django.middleware.cache.UpdateCacheMiddleware',    # for cahcing
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

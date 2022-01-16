@@ -20,10 +20,9 @@ from django.db.models import Q
 from django.views.decorators.http import condition, last_modified, etag
 from django.views.decorators.vary import vary_on_headers, vary_on_cookie
 from django.views.decorators.cache import cache_control, never_cache
+from django.utils.cache import patch_response_headers
 from django.utils.decorators import method_decorator
 from datetime import datetime
-# HW: start check createing of Order Room, Can it be possible
-# HW create new end point for removing permission
 
 
 class DeletePermissionAPIView(RetrieveModelMixin, DestroyModelMixin, GenericViewSet):
