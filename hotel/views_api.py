@@ -17,6 +17,11 @@ from guardian.shortcuts import assign_perm, get_objects_for_user
 from django.contrib.auth.models import User, ContentType
 from guardian.models.models import UserObjectPermission
 from django.db.models import Q
+from django.views.decorators.http import condition, last_modified, etag
+from django.views.decorators.vary import vary_on_headers, vary_on_cookie
+from django.views.decorators.cache import cache_control, never_cache
+from django.utils.decorators import method_decorator
+from datetime import datetime
 # HW: start check createing of Order Room, Can it be possible
 # HW create new end point for removing permission
 
@@ -83,6 +88,14 @@ class APICreateOrderedRoom(CreateAPIView):
         assign_perm("hotel.view_orderroom", self.request.user, instance)
 
 
+def last_modify_func(request, **kwargs):
+    return datetime(year=2022, month=1, day=10, hour=10, minute=20, second=10)
+
+
+def current_etag(request, **kwargs):
+    return "test_etag"
+
+
 class APIListOrderedRoom(ListAPIView):
     serializer_class = OrderedRoomSerializer
     queryset = OrderRoom.objects.annotate(duration__days=ExtractDay(F('end_date') - F('start_date')))\
@@ -91,12 +104,23 @@ class APIListOrderedRoom(ListAPIView):
     ordering_fields = ["id", "room", "price", "start_date", "end_date", "date", "duration__days", "total__price"]
     ordering = ['id']
     filtering_fields = {"duration__days__gte", "duration__days__lte", "total__price__gte", "total__price__lte"}
-    permission_classes = [IsAuthenticated]
-    authentication_classes = [SessionAuthentication]
 
-    def get_queryset(self):
-        queryset = self.queryset.all()
-        return get_objects_for_user(self.request.user, "hotel.view_orderroom", queryset, with_superuser=False)
+    @method_decorator(condition(etag_func=current_etag, last_modified_func=last_modify_func), name="get")
+    # @method_decorator(last_modified(last_modify_func), name="get")
+    # @method_decorator(etag(current_etag), name="get")
+    # @method_decorator(cache_control(max_age=10), name="get")
+    # @method_decorator(never_cache)
+    # @method_decorator(vary_on_headers("Cookie", "User-Agent"))
+    # @method_decorator(vary_on_cookie)
+    def get(self, request, * args, **kwargs):
+        print(11111)
+        return super(APIListOrderedRoom, self).get(request, *args, **kwargs)
+    # permission_classes = [IsAuthenticated]
+    # authentication_classes = [SessionAuthentication]
+
+    # def get_queryset(self):
+    #     queryset = self.queryset.all()
+    #     return get_objects_for_user(self.request.user, "hotel.view_orderroom", queryset, with_superuser=False)
 
 
 class APIRetrieveOrderedRoom(RetrieveAPIView):

@@ -60,7 +60,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # 'django.middleware.http.ConditionalGetMiddleware',  # for caching
+    'django.middleware.http.ConditionalGetMiddleware',  # for caching
     # 'django.middleware.cache.UpdateCacheMiddleware',    # for cahcing
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -72,7 +72,7 @@ MIDDLEWARE = [
     # 'django.middleware.cache.FetchFromCacheMiddleware',  # for cahcing
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
-
+# CACHE_MIDDLEWARE_SECONDS = 90
 ROOT_URLCONF = 'bookshop.urls'
 
 INTERNAL_IPS = [
