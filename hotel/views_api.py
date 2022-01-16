@@ -105,10 +105,10 @@ class APIListOrderedRoom(ListAPIView):
     ordering = ['id']
     filtering_fields = {"duration__days__gte", "duration__days__lte", "total__price__gte", "total__price__lte"}
 
-    # @method_decorator(condition(etag_func=current_etag, last_modified_func=last_modify_func), name="get")
+    @method_decorator(condition(etag_func=current_etag, last_modified_func=last_modify_func), name="get")
     # @method_decorator(last_modified(last_modify_func), name="get")
     # @method_decorator(etag(current_etag), name="get")
-    @method_decorator(cache_control(max_age=40, public=True), name="get")
+    # @method_decorator(cache_control(max_age=40, public=True), name="get")
     # @method_decorator(never_cache)
     # @method_decorator(vary_on_headers("Cookie", "User-Agent"))
     # @method_decorator(vary_on_cookie)
