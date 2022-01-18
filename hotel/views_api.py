@@ -17,6 +17,12 @@ from guardian.shortcuts import assign_perm, get_objects_for_user
 from django.contrib.auth.models import User, ContentType
 from guardian.models.models import UserObjectPermission
 from django.db.models import Q
+
+from django.views.decorators.cache import cache_control
+from django.views.decorators.http import etag, last_modified, condition
+from django.utils.decorators import method_decorator
+
+
 # HW: start check createing of Order Room, Can it be possible
 # HW create new end point for removing permission
 
@@ -83,6 +89,10 @@ class APICreateOrderedRoom(CreateAPIView):
         assign_perm("hotel.view_orderroom", self.request.user, instance)
 
 
+def my_function(request):
+    return
+
+
 class APIListOrderedRoom(ListAPIView):
     serializer_class = OrderedRoomSerializer
     queryset = OrderRoom.objects.annotate(duration__days=ExtractDay(F('end_date') - F('start_date')))\
@@ -96,7 +106,13 @@ class APIListOrderedRoom(ListAPIView):
 
     def get_queryset(self):
         queryset = self.queryset.all()
+        print("test query")
         return get_objects_for_user(self.request.user, "hotel.view_orderroom", queryset, with_superuser=False)
+
+    # @method_decorator(cache_control(max_age=40, private=True))
+    # @method_decorator(last_modified())
+    def get(self, *args, **kwargs):
+        return super().get(*args, **kwargs)
 
 
 class APIRetrieveOrderedRoom(RetrieveAPIView):
