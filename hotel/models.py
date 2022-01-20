@@ -42,3 +42,20 @@ class OrderRoom(models.Model):
 
     def __str__(self):
         return f"{self.room.number} {self.start_date} - {self.end_date}"
+
+
+#
+# def my_function(*args, **kwargs):
+#     print("post_save")
+#
+#
+# models.signals.pre_save.connect(my_function, sender=Room)
+# models.signals.post_save.connect(my_function, sender=Room)
+#
+# models.signals.post_delete
+# models.signals.pre_delete
+#
+# models.signals.post_init
+# models.signals.pre_init
+
+

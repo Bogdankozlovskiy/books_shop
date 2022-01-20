@@ -46,8 +46,8 @@
         {{ book.publish_date|timeuntil:comment.date.date }}<br>
         {{ comment.user }}<br>
         {{ comment.text }}<br>
-        <i id="count_of{{ comment.id }}">{{ comment.likes|yesno }}</i>
-        <i id="count_of{{ comment.id }}">{{ comment.likes|default_if_none:0 }}</i>
+        <i id="count_of{{ comment.id }}">{{ comment.new_like|yesno }}</i>
+        <i id="count_of{{ comment.id }}">{{ comment.new_like|default_if_none:0 }}</i>
         {% if comment.user == user %}
             <form action="{% url 'MyApp:delete-comment' comment_id=comment.id %}" method="post">
                 {% csrf_token %}

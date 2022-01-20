@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.dispatch import receiver, Signal
 
 
-my_signal = Signal(providing_args=["a", "b"], use_caching=True)
+# my_signal = Signal(providing_args=["a", "b"], use_caching=True)
 
 
 class Book(models.Model):
@@ -27,6 +27,11 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class AuthorsStatistic(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    count = models.PositiveIntegerField(default=0)
 
 
 class RateBookUser(models.Model):
@@ -63,23 +68,50 @@ class Comment(models.Model):
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="comments")
-    like = models.ManyToManyField(User)
+    # like = models.ManyToManyField(User)
+    new_like = models.ManyToManyField(User, through="CommentBookLike", related_name="test_name_comment")
+    my_custom_like = models.IntegerField(default=0)
 
     objects = models.Manager()
 
     def save(self, **kwargs):
-        my_signal.send(sender=self.__class__, a=5, b=6)
+        # my_signal.send(sender=self.__class__, a=5, b=6)
         data = super().save(**kwargs)
         return data
 
 
-@receiver(models.signals.post_save)
-def test_1(sender, **kwargs):
-    print("test_1")
-    # print(row)
-    print(sender)
-    print(kwargs)
-    print("test_1")
+class CommentBookLike(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
+
+
+def add_like(*args, **kwargs):
+    instance = kwargs['instance']
+    instance.comment.my_custom_like += 1
+    instance.comment.save()
+
+
+def sub_like(*args, **kwargs):
+    instance = kwargs['instance']
+    instance.comment.my_custom_like -= 1
+    instance.comment.save()
+
+
+models.signals.post_save.connect(add_like, sender=CommentBookLike)
+models.signals.post_delete.connect(sub_like, sender=CommentBookLike)
+
+
+
+
+
+
+# @receiver(models.signals.post_save)
+# def test_1(sender, **kwargs):
+#     print("test_1")
+#     # print(row)
+#     print(sender)
+#     print(kwargs)
+#     print("test_1")
 
 
 # models.signals.post_save.connect(partial(test_1, row=1), sender=Comment, dispatch_uid=1)
@@ -96,4 +128,4 @@ def test_1(sender, **kwargs):
 
 # models.signals.m2m_changed.connect(partial(test_1, row=9), sender=Comment.like.through, dispatch_uid=9)
 
-my_signal.connect(test_1, sender=Comment)
+# my_signal.connect(test_1, sender=Comment)

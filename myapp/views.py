@@ -111,6 +111,7 @@ def add_like_to_comment_ajax(request, comment_id):
     comment = Comment.objects.get(id=comment_id)
     if request.user in comment.like.all():
         comment.like.remove(request.user)
+        Comment.like.through
     else:
         comment.like.add(request.user)
     comment.save()

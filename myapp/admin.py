@@ -6,7 +6,7 @@ from guardian.admin import GuardedModelAdmin
 class InlineCommentAdmin(admin.StackedInline):
     model = Comment
     extra = 2
-    readonly_fields = ["like"]
+    readonly_fields = ["my_custom_like"]
 
 
 class BookAdmin(GuardedModelAdmin):

@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnl
 from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 
 from api.jwt_user_model import MyCustomJWTAuthentication
-from myapp.models import Comment
+from myapp.models import Comment, CommentBookLike
 from api.serializers import BookSerializer, DetailBookSerializer, CreateBookSerializer, CommentSerializer
 from myapp.models import Book
 from django.db.models import Prefetch, Avg, Sum, Count
@@ -45,12 +45,12 @@ class HasPermission(BasePermission):
 class APIAddLike(APIView):
     def post(self, request, comment_id):
         comment = Comment.objects.get(id=comment_id)
-        if request.user in comment.like.all():
-            comment.like.remove(request.user)
+        if request.user in comment.new_like.all():
+            CommentBookLike.objects.get(user=request.user, comment=comment).delete()
         else:
-            comment.like.add(request.user)
-        comment.save()
-        return Response({"likes": comment.like.count()})
+            CommentBookLike.objects.create(user=request.user, comment=comment)
+        comment.refresh_from_db()
+        return Response({"likes": comment.my_custom_like})
 
 
 class MyPageNumberPagination(PageNumberPagination):
@@ -161,4 +161,4 @@ class APICreateMessage(CreateAPIView):
 
 class APIVIEWComment(RetrieveAPIView):
     serializer_class = CommentSerializer
-    queryset = Comment.objects.annotate(Count("like"))
+    queryset = Comment.objects
