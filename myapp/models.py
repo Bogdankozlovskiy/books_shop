@@ -101,31 +101,15 @@ models.signals.post_save.connect(add_like, sender=CommentBookLike)
 models.signals.post_delete.connect(sub_like, sender=CommentBookLike)
 
 
+def count_authors(sender, instance, **kwargs):
+    action = kwargs['action']
+    if action == "post_add":
+        pk_set = kwargs['pk_set']
+        print(AuthorsStatistic)
+        # cotinue as HW....
+
+
+models.signals.m2m_changed.connect(count_authors, sender=Book.authors.through)
 
 
 
-
-# @receiver(models.signals.post_save)
-# def test_1(sender, **kwargs):
-#     print("test_1")
-#     # print(row)
-#     print(sender)
-#     print(kwargs)
-#     print("test_1")
-
-
-# models.signals.post_save.connect(partial(test_1, row=1), sender=Comment, dispatch_uid=1)
-# models.signals.pre_save.connect(partial(test_1, row=2), sender=Comment, dispatch_uid=2)
-#
-# models.signals.post_delete.connect(partial(test_1, row=3), sender=Comment, dispatch_uid=3)
-# models.signals.pre_delete.connect(partial(test_1, row=4), sender=Comment, dispatch_uid=4)
-#
-# models.signals.pre_init.connect(partial(test_1, row=5), sender=Comment, dispatch_uid=5)
-# models.signals.post_init.connect(partial(test_1, row=6), sender=Comment, dispatch_uid=6)
-#
-# models.signals.pre_migrate.connect(partial(test_1, row=7), sender=Comment, dispatch_uid=7)
-# models.signals.post_migrate.connect(partial(test_1, row=8), sender=Comment, dispatch_uid=8)
-
-# models.signals.m2m_changed.connect(partial(test_1, row=9), sender=Comment.like.through, dispatch_uid=9)
-
-# my_signal.connect(test_1, sender=Comment)
