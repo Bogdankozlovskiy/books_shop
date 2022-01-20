@@ -1,8 +1,10 @@
+import datetime
+from hashlib import sha256
 from django.db.models.functions import ExtractDay
 from rest_framework.filters import OrderingFilter
 from rest_framework.mixins import DestroyModelMixin, RetrieveModelMixin
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.authentication import SessionAuthentication
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.generics import GenericAPIView
 from rest_framework.viewsets import GenericViewSet
 from rest_framework import status
@@ -90,7 +92,18 @@ class APICreateOrderedRoom(CreateAPIView):
 
 
 def my_function(request):
-    return
+    date = OrderRoom.objects.all().order_by("date").last().date
+    return datetime.datetime(year=date.year, month=date.month, day=date.day, hour=0, minute=0)
+
+
+def my_little_fun(request):
+    query_set = OrderRoom.objects.annotate(duration__days=ExtractDay(F('end_date') - F('start_date')))\
+        .annotate(total__price=F("price") * F("duration__days"))
+    setattr(request, "query_set", query_set)
+    serializer = OrderedRoomSerializer(data=query_set, many=True)
+    serializer.is_valid()
+    return sha256(serializer.data.__str__().encode()).hexdigest()
+    # return "my_key"
 
 
 class APIListOrderedRoom(ListAPIView):
@@ -102,16 +115,21 @@ class APIListOrderedRoom(ListAPIView):
     ordering = ['id']
     filtering_fields = {"duration__days__gte", "duration__days__lte", "total__price__gte", "total__price__lte"}
     permission_classes = [IsAuthenticated]
-    authentication_classes = [SessionAuthentication]
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
 
     def get_queryset(self):
-        queryset = self.queryset.all()
-        print("test query")
+        if hasattr(self.request, "query_set"):
+            queryset = self.request.query_set
+        else:
+            queryset = self.queryset.all()
         return get_objects_for_user(self.request.user, "hotel.view_orderroom", queryset, with_superuser=False)
 
     # @method_decorator(cache_control(max_age=40, private=True))
-    # @method_decorator(last_modified())
+    # @method_decorator(last_modified(my_function))
+    # @method_decorator(etag(my_little_fun))
+    # @method_decorator(condition(etag_func=my_little_fun, last_modified_func=my_function))
     def get(self, *args, **kwargs):
+        print("test query")
         return super().get(*args, **kwargs)
 
 
