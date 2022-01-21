@@ -1,143 +1,17 @@
-aioredis @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/57/b1/ed/7ef24be02f4faed2e69ac3c9230da6819de61a06b0a6ecc2d007c3e19e/aioredis-1.3.1-py3-none-any.whl
-amqp @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/c8/53/a1/109ba91cb62b50e83bac8fd973e8fd02643dea2db190619b314f1fd0a8/amqp-5.0.9-py3-none-any.whl
-appnope @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/fd/ae/b8/2382438588ec752ed602c2dcab2a0678b30ff15f2d9a30267ff97ecd64/appnope-0.1.2-py2.py3-none-any.whl
-argon2-cffi @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/e5/36/34/bf219434f7144f39ec847b03dc7626b6d79dd2ce22f0dd27be6a6f2656/argon2_cffi-21.3.0-py3-none-any.whl
-argon2-cffi-bindings @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/8a/28/dc/1254b8ff095bbd272ed0580022782694c1bb21ac720ecb7040b8c34c6c/argon2_cffi_bindings-21.2.0-cp38-abi3-macosx_10_9_universal2.whl
-asgiref @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/c3/92/1c/3d42ce7ad1e9e2aa1621c3fa8ebc5e21bd880a768bd691fb4f0356baa8/asgiref-3.4.1-py3-none-any.whl
-asttokens @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/cc/f5/53/c8c73ee645bbb70b6b0ce34f55ed59b6f3f3238881f15a7e44ebe2ce2d/asttokens-2.0.5-py2.py3-none-any.whl
-async-timeout @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/62/ff/30/bd0ec891880d93bf40cf6e7c53ab08dd9eb6af45fa532c030731e6eed0/async_timeout-4.0.2-py3-none-any.whl
-attrs @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/5b/25/94/5d165cd3190cb7dfdc98de86c28e8131fc6e19d83a504412664abffec0/attrs-21.4.0-py2.py3-none-any.whl
-autobahn @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/32/95/8c/b3763544938b84f023449070088735f84343393434262f0cc0d8e927df/autobahn-21.11.1.tar.gz
-Automat @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/b8/e5/0e/e86ac85851dbf0701b64dc7a0c07c823d0194d7e31a24f1ba60bed622d/Automat-20.2.0-py2.py3-none-any.whl
-backcall @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/43/8e/e8/4e598704edf6fb4a53d552ea511c04e9958dcf850897760e5387878b99/backcall-0.2.0-py2.py3-none-any.whl
-beautifulsoup4 @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/d4/3e/b2/b4df19cca3023c21eb4a289b88c132ac71a9517bddef2055fd38eadd39/beautifulsoup4-4.10.0-py3-none-any.whl
-billiard @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/cf/59/06/55d38419b5aa6e1fe731cb9d5dfdc4fa930000cc089eb421e3d039cfc2/billiard-3.6.4.0-py3-none-any.whl
-black @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/24/fc/6b/230b21844ab2585833fa572d6ae210dabd36b7eab47f13ee68aa4227cc/black-21.12b0-py3-none-any.whl
-bleach @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/db/42/1e/1062d618eece64f515d716a5cb98eace54768d5af54a9273b1f554eaec/bleach-4.1.0-py2.py3-none-any.whl
-bs4 @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/31/81/b7/a039b0e011fa7663d81788ef0aef586453c50f018bbfc3b0c389a60ecf/bs4-0.0.1.tar.gz
-celery @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/13/f0/12/3aacbfdf7fb55b35301ae6889ddac1e922c121a93c3ebb365b74806ad0/celery-5.2.3-py3-none-any.whl
-certifi @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/71/9a/ba/a51b34ce9aacf9ac5dbb90d7c7335877522ee188189d9a521ee1a9c411/certifi-2021.10.8-py2.py3-none-any.whl
-cffi @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/64/59/35/9cc31c7226ca68e026fefff4b787b447689301714eecc03b78668a48ae/cffi-1.15.0-cp39-cp39-macosx_10_9_x86_64.whl
-channels @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/12/9c/e7/f4252a50e125ab7ee58d50982122a1590d34c915b752ba13e03eedadd1/channels-3.0.4-py3-none-any.whl
-channels-redis @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/c5/21/0e/4585719fbc92fec62cae6f96d3d710e67a993824b6f0dbbc37366e0ec4/channels_redis-3.3.1-py3-none-any.whl
-charset-normalizer @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/9e/1a/c0/f7635922644ab43cdae873172296c99b00796f2e281669e0fb7516bf88/charset_normalizer-2.0.9-py3-none-any.whl
-click @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/34/4d/5b/2e936191a48c61e37319c157af7e3c0dbdde9b80ccdd04b7940f99c5db/click-8.0.3-py3-none-any.whl
-click-didyoumean @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/fc/14/66/e0f912d7ee8b42454ca7c5b7b2a5b9cec16198ea38cb018c904fc95c87/click_didyoumean-0.3.0-py3-none-any.whl
-click-plugins @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/87/75/c3/fb63a9b9f496004a8bf69eb791be6e419ca0cd59f1d7e250a1bd8322e3/click_plugins-1.1.1-py2.py3-none-any.whl
-click-repl @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/36/62/78/c7266ac6c43eed045786703622efa441aeb52948537f4332c66609e511/click_repl-0.2.0-py3-none-any.whl
-constantly @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/b1/88/48/9251c310b06614794944e121657b60bba5de1686d8c2dfeb79f6f80ad0/constantly-15.1.0-py2.py3-none-any.whl
-coreapi @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/a1/d2/42/9daa39a9a9b2daf74f734f46589930a09bad232e4aff2d1813be140030/coreapi-2.3.3-py2.py3-none-any.whl
-coreschema @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/2b/b3/80/cfb6d6f90067a445f8c35c6ceb512abd82fe36cad196e787db866129e0/coreschema-0.0.4.tar.gz
-cryptography @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/05/1b/5b/e4612906b9aff82cae9e115c94cc6d664c45fb5903950dbc3af51ae438/cryptography-36.0.1-cp36-abi3-macosx_10_10_x86_64.whl
-daphne @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/31/da/f5/87c148f67573404dad7fcd2c73264a32e1ef99902c3750d8f9473eb69a/daphne-3.0.2-py3-none-any.whl
-debugpy @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/62/c6/03/2b4538912d695ec5541b847132489551fc214913f073f9dbc8d1b5e0d1/debugpy-1.5.1-cp39-cp39-macosx_10_15_x86_64.whl
-decorator @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/c5/6b/f9/35190d429d462647b42d2847ab554759b98334d6479bc354c719947ce6/decorator-5.1.0-py3-none-any.whl
-defusedxml @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/2b/69/07/7b13f7eaf3a4d7af737dcebe24d3d17b1c2a2f457fbddf746f5642bc43/defusedxml-0.7.1-py2.py3-none-any.whl
-Django @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/68/88/e8/04dd0b7619c91adf7efe1467541f7aced060d2cf19bf26d4bb32bc54fa/Django-3.2.9-py3-none-any.whl
-django-celery-beat @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/82/ac/53/4609ac74ed15e18d1dbdf0e742e24b921cece2579cffb9e5596a211af9/django_celery_beat-2.2.1-py2.py3-none-any.whl
-django-celery-results @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/13/84/62/8daa875d308e677f4f4b1703d1248b5f162216919d14e9004d41ab39d1/django_celery_results-2.2.0-py2.py3-none-any.whl
-django-debug-toolbar @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/58/74/61/f227b9dce16c03b515318bfdeadae6fcd22107ed69534375ef40a05f67/django_debug_toolbar-3.2.4-py3-none-any.whl
-django-extensions @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/0d/65/85/4da0ae6bae7e2a476d39dce1713d309f0aec4445ce2032439e5b90bbf4/django_extensions-3.1.5-py3-none-any.whl
-django-filter @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/a9/c6/98/7cc5361bf7dd56b5125c00f61aaf4c4a2c94e438288814f48d6cc4fe3b/django_filter-21.1-py3-none-any.whl
-django-guardian @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/21/9c/9d/97c7f3992f873816c3436eb599559923c149dbecc5489ee2286f780988/django_guardian-2.4.0-py3-none-any.whl
-django-redis-cache @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/44/78/f6/43822c33d7811d844bc0898b0c3e0669ed6e3246bfe7060535fc983ce9/django-redis-cache-3.0.0.tar.gz
-django-templated-mail @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/8f/05/16/2de1a9f26569fb149aaed51dc3aa0238165f7c8aff822b017fee9f958f/django_templated_mail-1.1.1-py3-none-any.whl
-django-timezone-field @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/6a/b7/b6/8d63601b10b8b45a6c27d37559c6cbe0054346654059811ed8f303937a/django_timezone_field-4.2.3-py3-none-any.whl
-djangorestframework @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/4a/0e/8b/eb31ad1f5a8d0aef287e2de8aeed7d250803677468c74b0abd296678b8/djangorestframework-3.13.1-py3-none-any.whl
-djangorestframework-simplejwt @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/7b/dc/a6/e53d39f93817231b28801e06accfdb6edb4f04ce8df6dfa16bfa0363b2/djangorestframework_simplejwt-4.8.0-py3-none-any.whl
-djangorestframework-xml @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/0d/10/83/c3f12169388942b732c28b209d8bfde7114f6d5cd75c7c41f89f6c1138/djangorestframework_xml-2.0.0-py2.py3-none-any.whl
-djangorestframework-yaml @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/6f/f1/43/e4943ab9312fc98e67899561be0dcc09edff488b2eba93fc78fab387d0/djangorestframework_yaml-2.0.0-py2.py3-none-any.whl
-djoser @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/38/0b/0d/c9dd01df566368943aa4fd2ba831f0a609cc60be599999cc5aca612234/djoser-2.1.0-py3-none-any.whl
-entrypoints @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/63/c1/af/bbfdd91bcb544e62ac8f1567ef23c243cb188d1a9cb933532999c9bbb0/entrypoints-0.3-py2.py3-none-any.whl
-executing @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/8a/09/4c/27f71236639b93fc2cdee68e256ecdd92530ef4d9b2e13d39e4625b086/executing-0.8.2-py2.py3-none-any.whl
-h11 @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/bc/67/35/dab5a305c7a43c7a517d86674f35006dbb43c6746d19f419698f568164/h11-0.12.0-py3-none-any.whl
-hiredis @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/d4/c2/19/8ca29df3d3dbbaed6ec4dda6a1ac5382ce2543a5945e89d074741439d1/hiredis-2.0.0-cp39-cp39-macosx_10_9_x86_64.whl
-hyperlink @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/ac/c9/85/b172f5d08e937f31bc0feffe4e2ff08bef15ff1e4d382616b9f7b174b0/hyperlink-21.0.0-py2.py3-none-any.whl
-idna @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/d5/04/80/9c17fd3240a37d12ff2ef042b0306aeb1abd2d8b95f150fd60be938352/idna-3.3-py3-none-any.whl
-incremental @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/03/0f/d8/1f9c21de086b17b28e0ed5914f384759067c88a524742b94e72eb07020/incremental-21.3.0-py2.py3-none-any.whl
-ipykernel @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/c6/c6/c7/963981d4f504e2e612a28c576eec929643dce30f30e864ea3484cd3e7b/ipykernel-6.6.1-py3-none-any.whl
-ipython @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/e0/59/72/4d9bd2e1728ce74ef79b7a4d42048fa75076bb9e276ff9f0378a2d4e3c/ipython-7.30.1-py3-none-any.whl
-ipython-genutils @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/b4/31/01/6f96480580d1674cab0b5e26dc9fca7bbdf7a2fd5811a7807a92436268/ipython_genutils-0.2.0-py2.py3-none-any.whl
-ipywidgets @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/fc/29/4b/f750c0f70ce7f9529dc7dcae670c7a69248e56cec4a62e16cdf4febd70/ipywidgets-7.6.5-py2.py3-none-any.whl
-itypes @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/ad/65/69/17a3a1ab828578556a7d79b3dbe47228126257b8630b5306752f7ace76/itypes-1.2.0-py2.py3-none-any.whl
-jedi @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/c0/16/7b/b208472f00204d5aaeb0895fcde8e681c56c250bdf8d106fa76cdf7b30/jedi-0.18.1-py2.py3-none-any.whl
-Jinja2 @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/3b/12/80/ed05a8559d6ad1e85324dbcebfe790670d339c674fb15c419b29aae138/Jinja2-3.0.3-py3-none-any.whl
-jsonschema @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/83/b9/98/0d68d42823ff5b50d8e4ca0633767e1fc9180f808494d0a4f2ad0dd0a0/jsonschema-4.3.3-py3-none-any.whl
-jupyter @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/bb/e8/12/09df1332820a1126a780ab09cec78d2f50457f79bcd0cb2fbb07b19ef4/jupyter-1.0.0-py2.py3-none-any.whl
-jupyter-client @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/27/6c/bc/333a7cf743ca6eaba129fbc32cbd844b16a60d1a00d4837ea6a83d953c/jupyter_client-7.1.0-py3-none-any.whl
-jupyter-console @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/4b/2f/b8/119f975fb811a5e911beacc7a1bb8f8e1154254fb33204e753131e7aca/jupyter_console-6.4.0-py3-none-any.whl
-jupyter-core @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/94/16/ab/109e77a494c40a8da71a914e4c4fced4f49ccdc3ba8dc603c10c12d01b/jupyter_core-4.9.1-py3-none-any.whl
-jupyterlab-pygments @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/de/ef/fc/5883436de4b7865f082f7cba0e0e0ff5fbf229fe55d6e7d5431a6080f4/jupyterlab_pygments-0.1.2-py2.py3-none-any.whl
-jupyterlab-widgets @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/b0/2b/0f/f7f65b7f0839db0577f58ba1135a0b2592c80c8c44cfe0feade7ffea95/jupyterlab_widgets-1.0.2-py3-none-any.whl
-kombu @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/0a/e9/38/34c2684e703326460de5c15d7e83e7998817fdb377e5a2d10faf77496d/kombu-5.2.3-py3-none-any.whl
-MarkupSafe @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/20/e4/29/5b1a93d4ee8437f01551437cffbb57ba6744c59796443ca99051473f75/MarkupSafe-2.0.1-cp39-cp39-macosx_10_9_x86_64.whl
-matplotlib-inline @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/b5/de/c6/6384d0999287fcdc9e88d38f7951106dcb7ffac7c4e8c0d0c665e12cac/matplotlib_inline-0.1.3-py3-none-any.whl
-mistune @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/33/31/4c/2d69dc65d06d1c8f8b00b8e995e24bae97fce2e1f8ec5d8d2d98e852da/mistune-0.8.4-py2.py3-none-any.whl
-msgpack @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/74/af/4f/6dae20932e3020d93d053d121ac1ec62cad18e9dd45cada40caecd78ea/msgpack-1.0.3-cp39-cp39-macosx_10_9_x86_64.whl
-mypy-extensions @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/92/45/bf/1807ce854ff668d92602207a37bfa9316def2a3f257bd03c4c5be4bc9b/mypy_extensions-0.4.3-py2.py3-none-any.whl
-nbclient @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/4f/7f/d9/a2258a0ec621b96205a9c5d1522d2c1a16f1e08360af4938d6af875ccb/nbclient-0.5.9-py3-none-any.whl
-nbconvert @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/32/27/75/817fd411880af1b71a86dad48b0462703e787688391113e0a2ccb95366/nbconvert-6.4.0-py3-none-any.whl
-nbformat @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/36/a7/e7/e1a0c1c54f6151e23afd51bc71e3f6e0b24a96dd1e693b92dd9a4e4ab3/nbformat-5.1.3-py3-none-any.whl
-nest-asyncio @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/b3/29/3c/b5aaddd006ebba37d2ae62d54ebf0e5a536b927e00b2e3a7b034b82e4a/nest_asyncio-1.5.4-py3-none-any.whl
-notebook @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/1a/6a/22/3e21fed164be61b5708342540da0b106f4e490683849fe458a5632d50d/notebook-6.4.6-py3-none-any.whl
-numpy==1.22.1
-oauthlib @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/8f/79/8f/4e7de5a92b46f97baa6ac78e9bc5605815af5ee36b2dadd4b682de341b/oauthlib-3.1.1-py2.py3-none-any.whl
-packaging @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/47/3f/ce/b240169f7d8bef1ff24a0269b709721ce86543c2ec25e0b6adb2c2d7ac/packaging-21.3-py3-none-any.whl
-pandas==1.3.5
-pandocfilters @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/31/93/b3/c3f289a2e857d460f34581e351cfe3ac509300d47c487f135c96e39349/pandocfilters-1.5.0-py2.py3-none-any.whl
-parso @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/4e/d3/c5/d91e200388f1ce44b74484eb39fbfd0797eb236741d3672a7d728668b2/parso-0.8.3-py2.py3-none-any.whl
-pathspec @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/0a/67/21/620031f7f2938bad77b057a68a4c2a334542a7402a3214ed48690caf8c/pathspec-0.9.0-py2.py3-none-any.whl
-pexpect @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/5c/c2/43/b54fe59cab7e831df35401c8e6840162bf4a2ae5862604e7bc22db3000/pexpect-4.8.0-py2.py3-none-any.whl
-pickleshare @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/b5/48/a1/d2b823337003d531d87cf0d503ef28bb579703a74d14ad24a88863d616/pickleshare-0.7.5-py2.py3-none-any.whl
-Pillow @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/94/0b/3a/ddecbb95ac22ac63e9d34e795c02bfe68926ff412aed2435cd8fbb4cdd/Pillow-9.0.0-cp39-cp39-macosx_10_10_x86_64.whl
-platformdirs @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/f3/c3/f1/8990511c93fbc16c5c941182937c1df14fd01cd1df116245ac7db6e1b2/platformdirs-2.4.1-py3-none-any.whl
-prometheus-client @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/e5/94/14/4c38534d91e7278ccdf17c9e95312bb7dc0616281412eb11d863b4f6b4/prometheus_client-0.12.0-py2.py3-none-any.whl
-prompt-toolkit @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/ec/2a/77/5024fe40d375fe25a5d638cb593ec62b68f66f18670ea6eb8be5e0d414/prompt_toolkit-3.0.24-py3-none-any.whl
-psycopg2 @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/f6/49/78/b89af907a751026c6e97a38dca440a0d7eefc89601c8a58df0569153a2/psycopg2-2.9.3.tar.gz
-ptyprocess @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/2a/29/5d/0cdc5ec916431d60f03d2f725c54edbfa9fe53700b75fdfee209a3291e/ptyprocess-0.7.0-py2.py3-none-any.whl
-pure-eval @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/39/b8/e2/1fdab47ff73d9d18bc9f39f5eac11f4686a4d3b1c3c6f97324189e07c1/pure_eval-0.2.1-py3-none-any.whl
-pyasn1 @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/7b/3a/54/42ce43b579bda01b9d79022fb733811594441e7a32e9f9a5a98f672bdc/pyasn1-0.4.8-py2.py3-none-any.whl
-pyasn1-modules @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/dd/b8/4f/b56433e0354274a31074995e01b8671751e9f0ed0001f5254e5b03a54f/pyasn1_modules-0.2.8-py2.py3-none-any.whl
-pycparser @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/fb/06/dd/b5671b47dd0597663bc05d60d324bb315a8cef56f3179b8f9067f88e50/pycparser-2.21-py2.py3-none-any.whl
-Pygments @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/c4/2a/88/f3c7b881a8e50153413715a16d4b97b0f816cb5cadb4c841bb2402254b/Pygments-2.11.1-py3-none-any.whl
-PyJWT @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/6d/a2/4c/7218503a28c8d672d4374161e6e47a71ffc11c0046a535d2ff709af4ca/PyJWT-2.3.0-py3-none-any.whl
-pyOpenSSL @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/d7/a6/7d/bcb4508bbca3df8cfcb5be06a29e31917a1d3992516ae551e630aa49f4/pyOpenSSL-21.0.0-py2.py3-none-any.whl
-pyparsing @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/61/f1/da/6428e68d48dbbc9e9b942cf2dfb6b5a7faa052423078aae46465c3c8e0/pyparsing-3.0.6-py3-none-any.whl
-pyrsistent @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/a3/50/5c/55747fd13209ee597a3e45d1ad70eef133559516e470c05a47c29365b0/pyrsistent-0.18.0-cp39-cp39-macosx_10_9_x86_64.whl
-python-crontab @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/0d/08/00/c859e5b04753577afc34d7c68fcec57182d0909dc7d34f71a673dad031/python-crontab-2.6.0.tar.gz
-python-dateutil @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/53/f8/2a/7d63ce15df7386e9536e83413453f8aa845b47fb425f05c4ca2fb231c3/python_dateutil-2.8.2-py2.py3-none-any.whl
-python3-openid @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/1f/82/2a/9ee77fff1d166e4fb92a4e474625188183ed34c63cf73820cd4c41120a/python3_openid-3.2.0-py3-none-any.whl
-pytz @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/3e/f3/dd/6629bf5ed0a970a128e0a015f2af3b67280e749a56fdaabdaa06d5fc6b/pytz-2021.3-py2.py3-none-any.whl
-PyYAML @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/34/22/0a/c2c23086eb908baf4d8ba853dbe69485d068f3b61fecbbf9b48a00183a/PyYAML-6.0-cp39-cp39-macosx_10_9_x86_64.whl
-pyzmq @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/bc/e7/71/8268513b4f8f39b0b0536af89428fd62af76c157c757a5ecf70bf09e1e/pyzmq-22.3.0-cp39-cp39-macosx_10_15_universal2.whl
-qtconsole @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/9d/da/16/5de771020aae699eb991b6cf8f59180f0a66496eb95e8e69006f4605c8/qtconsole-5.2.2-py3-none-any.whl
-QtPy @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/83/bd/f6/8ea9f21d682057094bf2ab81d0cf63fa307392582281a5f3e1a8320549/QtPy-2.0.0-py3-none-any.whl
-redis @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/1f/cc/e8/a2e4249977cc5b36425bd02e5ab9e4d4a586000e8798342ffd415576fb/redis-3.5.3-py2.py3-none-any.whl
-requests @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/5e/2d/78/049121be0a13da42ecf9b2e031d273c7b57436104bd6f525f86cb1c668/requests-2.27.0-py2.py3-none-any.whl
-requests-oauthlib @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/11/f5/eb/81a5da1da15ae0d7c5c1cc43f729856e59f8a0f09c77051ed1841bd01d/requests_oauthlib-1.3.0-py2.py3-none-any.whl
-Send2Trash @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/63/2c/10/d48818ab0722d2d6ac42f70c8b9b6567ff3a7936bdc06dedddda4398b8/Send2Trash-1.8.0-py3-none-any.whl
-service-identity @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/b1/52/73/b4dbc1db0eb8a4a2e9faf4231a0f8e54b2478b020bfe5c18fdcca0cbd7/service_identity-21.1.0-py2.py3-none-any.whl
-six @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/08/9f/47/c16ae03035fc69eaf100ea39657a49baaeef714e25a52575710c34cd48/six-1.16.0-py2.py3-none-any.whl
-social-auth-app-django @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/e1/96/6e/be31cd3fbd85e124971d7656563e212c802b809b6534ac9d148d8c1e43/social_auth_app_django-4.0.0-py3-none-any.whl
-social-auth-core @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/51/6f/40/ed37bd555e28e587f18f975850d06c8b5f630c920e96cf05f3964a1210/social_auth_core-4.1.0-py3-none-any.whl
-soupsieve @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/d6/e3/46/df82bc73fb10e31f7b04a84f47a5779830a07eeb6a6fa547e6d39ba88f/soupsieve-2.3.1-py3-none-any.whl
-sqlparse @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/ea/fd/ba/117a876397913faee210ef8bac93829e22ad9232662e656971383c0718/sqlparse-0.4.2-py3-none-any.whl
-stack-data @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/25/0c/a5/6ec5a89c30a0b054333b5a480224c62ceb7828fe78b774bf0d7443b317/stack_data-0.1.3-py3-none-any.whl
-terminado @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/02/75/b5/4e735b6c2cb848bfe48f9fdbdff83761cb24fb4d7efabc73f87129bfc7/terminado-0.12.1-py3-none-any.whl
-testpath @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/1e/2d/08/76691a9e7e429930fb378dd96f760de96f2686841c47da2b35a04c5aad/testpath-0.5.0-py3-none-any.whl
-tomli @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/ac/ac/b1/30c3dea8350b0dd2f05e88ef2753e8f7b7437a2b2a2775ddac38c73480/tomli-1.2.3-py3-none-any.whl
-tornado @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/8a/d4/49/50c44b642217b81c4d63991cb2560ebb78029f8090bd4a23c1c11a4ac0/tornado-6.1-cp39-cp39-macosx_10_9_x86_64.whl
-traitlets @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/ee/01/57/93229f3393af5b0814aff282450fcac279f4d7f32188b49db882ebf459/traitlets-5.1.1-py3-none-any.whl
-Twisted @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/df/c4/16/fdec6b8954e38f9cb4aa67824db626cb67a81e106f0e3643333b19cc96/Twisted-21.7.0-py3-none-any.whl
-txaio @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/fa/08/32/c860d7ebf60bd51dfd8454092f6b968fd7ad9145276e7c651b6c7e088b/txaio-21.2.1-py2.py3-none-any.whl
-typing_extensions @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/88/68/28/f1a10f89c5267ca2c8a3c0e79c45230a866cd7c52d295e556597219c54/typing_extensions-4.0.1-py3-none-any.whl
-uritemplate @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/1a/e2/cb/249c8899e583da59e638cdc64c159f34786ab2c1c72e980c6c12d824fd/uritemplate-4.1.1-py2.py3-none-any.whl
-urllib3 @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/55/46/d1/1acba0600879bfaada54191116fbaea89a464f437b3f949bc9c2a220e7/urllib3-1.26.7-py2.py3-none-any.whl
-uvicorn @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/51/50/48/272a88655de9d171a69860ddd1e00e0cf6554702cea70d1b409f9d0911/uvicorn-0.16.0-py3-none-any.whl
-vine @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/c1/80/fc/ccb677b19dd37eb7ad77b94745e563b67472b45dbcfb34e75a6110f12f/vine-5.0.0-py2.py3-none-any.whl
-wcwidth @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/7d/f4/60/0737157bb9711fec72c70dff523aa54491eef317e0d586cf5388ff0908/wcwidth-0.2.5-py2.py3-none-any.whl
-webencodings @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/ed/d4/da/61384706cfac042ba3bd148746d66e50695463993be117c7c8dadeef7a/webencodings-0.5.1-py2.py3-none-any.whl
-websockets @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/99/e5/9a/a4284de14dcab7eb19c4234f4b121534a25fab698bf3291fc290f5d39f/websockets-10.1-cp39-cp39-macosx_10_9_x86_64.whl
-Werkzeug @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/dc/22/44/bd6da3eabb9c2469b87c362534f57c29803f4ad859ade03b66b943d84b/Werkzeug-2.0.2-py3-none-any.whl
-widgetsnbextension @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/1e/8c/72/6bea2521eb3293d1d676d0bd992472ac2749ffc9159df93c30cb550027/widgetsnbextension-3.5.2-py2.py3-none-any.whl
-zope.interface @ file:///Users/bogdankozlovsky/Library/Caches/pypoetry/artifacts/f9/a1/04/10096190d1180e3062186ce969f960ac87f924c80f0b0c6f7bd8d18293/zope.interface-5.4.0-cp39-cp39-macosx_10_14_x86_64.whl
+Django==3.2.9
+djangorestframework==3.13.1
+djoser==2.1.0
+channels==3.0.4
+django-debug-toolbar==3.2.4
+django-filter==21.1
+django-guardian==2.4.0
+django-extensions==3.1.5
+Pillow==9.0.0
+jupyter==1.0.0
+psycopg2==2.9.3
+Werkzeug==2.0.2
+django-redis-cache==3.0.0
+uvicorn==0.16.0
+channels-redis==3.3.1
+websockets==10.1
+bs4==0.0.1
