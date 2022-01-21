@@ -124,7 +124,7 @@ class APIListOrderedRoom(ListAPIView):
             queryset = self.queryset.all()
         return get_objects_for_user(self.request.user, "hotel.view_orderroom", queryset, with_superuser=False)
 
-    # @method_decorator(cache_control(max_age=40, private=True))
+    @method_decorator(cache_control(max_age=40, private=True))
     # @method_decorator(last_modified(my_function))
     # @method_decorator(etag(my_little_fun))
     # @method_decorator(condition(etag_func=my_little_fun, last_modified_func=my_function))
