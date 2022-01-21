@@ -6,7 +6,7 @@ from datetime import date
 from hotel.models import Room, OrderRoom
 from django.contrib.auth.models import User
 
-
+# hello
 class TestOrder(TestCase):
     def test_render_html(self):
         response = self.client.get(reverse("Hotel:search-room"))
