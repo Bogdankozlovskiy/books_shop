@@ -26,8 +26,11 @@ jobs:
         sudo apt update
         sudo apt install redis-server
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-#        poetry update
+        pip install virtualenv
+        python3 -m venv venv
+        source /venv/bin/activate
+#        pip install -r requirements.txt
+        poetry update
     - name: Run Tests
       run: |
         python3 manage.py test
