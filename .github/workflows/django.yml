@@ -28,4 +28,4 @@ jobs:
         poetry update
     - name: Run Tests
       run: |
-        python manage.py test
+        python3 manage.py test
