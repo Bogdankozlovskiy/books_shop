@@ -103,9 +103,9 @@ ASGI_APPLICATION = 'bookshop.asgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "postgres",
-        "USER": "bogdankozlovsky",
-        "PASSWORD": "gd0d469SS_",
+        'NAME': "django_db",
+        "USER": "django_user",
+        "PASSWORD": "django_pwd",
         "HOST": "localhost",
         "PORT": 5432
         # "ENGINE": "django.db.backends.sqlite3",
