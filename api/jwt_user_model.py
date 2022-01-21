@@ -3,4 +3,8 @@ from rest_framework_simplejwt.models import TokenUser
 
 
 class CustomJWTUser(TokenUser, User):
-    pass
+    def groups(self):
+        return TokenUser.groups(self)
+
+    def user_permissions(self):
+        return TokenUser.user_permissions(self)
