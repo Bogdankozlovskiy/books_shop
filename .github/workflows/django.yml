@@ -37,8 +37,7 @@ jobs:
       run: |
         curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
         export PATH=$PATH:$HOME/.poetry/bin
-        ls /opt/hostedtoolcache/Python/3.9.9/x64
-        poetry env use /opt/hostedtoolcache/Python/3.9.9/x64
+        poetry env use /opt/hostedtoolcache/Python/3.9.9/x64/python
         poetry update
     - name: Run Tests
       run: |
