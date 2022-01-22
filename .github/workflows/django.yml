@@ -42,13 +42,11 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
-        python -m pip install poetry
-        export PATH=$PATH:$HOME/.poetry/bin
-        poetry update
+        pip install poetry
+        python -m poetry update
     - name: Run Tests
       run: |
-        export PATH=$PATH:$HOME/.poetry/bin
-        poetry run python manage.py test
+        python -m poetry run python manage.py test
 #      env:
 #        POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
 #        POSTGRES_USER: ${{ env.POSTGRES_USER }}
