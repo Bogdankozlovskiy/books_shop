@@ -20,6 +20,7 @@ jobs:
         image: postgres
         env:
           POSTGRES_PASSWORD: postgres
+      redis:
         image: redis
 
     steps:
