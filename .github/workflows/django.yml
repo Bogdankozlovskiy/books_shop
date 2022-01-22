@@ -40,5 +40,4 @@ jobs:
         poetry update
     - name: Run Tests
       run: |
-        source /home/runner/.cache/pypoetry/virtualenvs/books-shop-ssCurqa0-py3.9/bin/activate
-        python manage.py test
+        poetry run python manage.py test
