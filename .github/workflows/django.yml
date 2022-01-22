@@ -41,5 +41,4 @@ jobs:
         poetry update
     - name: Run Tests
       run: |
-        export PATH=$PATH:$HOME/.poetry/bin
         poetry run python manage.py test
