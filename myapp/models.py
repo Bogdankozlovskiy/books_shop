@@ -105,8 +105,15 @@ def count_authors(sender, instance, **kwargs):
     action = kwargs['action']
     if action == "post_add":
         pk_set = kwargs['pk_set']
-        print(AuthorsStatistic)
-        # cotinue as HW....
+        for author_id in pk_set:
+            author_set = AuthorsStatistic.objects.filter(id=author_id)
+            if author_set.exists():
+                author = author_set.first()
+                author.count += 1
+                author.save()
+            else:
+                AuthorsStatistic.objects.create(id=author_id, count=1)
+
 
 
 models.signals.m2m_changed.connect(count_authors, sender=Book.authors.through)

@@ -16,7 +16,7 @@ from rest_framework.response import Response
 from django.db.models import F
 from hotel.utils import MyCustomFilter
 from guardian.shortcuts import assign_perm, get_objects_for_user
-from django.contrib.auth.models import User, ContentType
+from django.contrib.auth.models import User, ContentType, Permission
 from guardian.models.models import UserObjectPermission
 from django.db.models import Q
 
@@ -68,14 +68,13 @@ class DeletePermissionAPIView(RetrieveModelMixin, DestroyModelMixin, GenericView
 
 class ShareGuardianPermission(CreateAPIView):
     serializer_class = GuardianSerializer
-    converter = {"hotel.view_orderroom": 52, "hotel.change_orderroom": 50}
     permission_classes = [IsAuthenticated]
     authentication_classes = [SessionAuthentication]
 
     def perform_create(self, serializer):
         data = serializer.validated_data
-        data["content_type_id"] = 13
-        data["permission_id"] = self.converter[data.pop("permission")]
+        data["content_type_id"] = ContentType.objects.get(app_label="hotel", model="orderroom").id
+        data["permission_id"] = Permission.objects.get(codename=data.pop('permission')).id
         data['user_id'] = User.objects.filter(username=data.pop('user')).first().id
         serializer.save()
 
@@ -89,6 +88,8 @@ class APICreateOrderedRoom(CreateAPIView):
         # do something or Not
         instance = serializer.save(user_id=self.request.user.id)
         assign_perm("hotel.view_orderroom", self.request.user, instance)
+        assign_perm("hotel.change_orderroom", self.request.user, instance)
+        assign_perm("hotel.delete_orderroom", self.request.user, instance)
 
 
 def my_function(request):

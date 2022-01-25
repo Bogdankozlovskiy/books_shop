@@ -1,3 +1,5 @@
+import datetime
+
 from django.test import TestCase
 from django.urls import reverse
 from bs4 import BeautifulSoup
@@ -59,4 +61,51 @@ class TestOrder(TestCase):
         )
         self.assertEqual(OrderRoom.objects.count(), 1)
         self.assertEqual(response.status_code, status.HTTP_302_FOUND)
-# Create your tests here.
+
+    def test_permission_for_order(self):
+        user = User.objects.create_user("test_username", "test@mail", "test_pwd")
+        room = Room.objects.create(
+            capacity=1,
+            price_for_day=22.3,
+            description="test",
+            number=201,
+            image="room/img.jpg"
+        )
+        self.client.force_login(user)
+        response = self.client.post(
+            reverse("Hotel:create-order-room"),
+            data={
+                "room": room.id,
+                "start_date": datetime.datetime(year=2022, month=1, day=1, hour=1, minute=1),
+                "end_date": datetime.datetime(year=2022, month=1, day=10, hour=2)
+            }
+        )
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(
+            response.data,
+            {
+                "id": 1,
+                'room': room.id,
+                'start_date': '2022-01-01T01:01:00+01:00',
+                'end_date': '2022-01-10T02:00:00+01:00'
+            }
+        )
+        frend_user = User.objects.create_user("frend user", "test@mail", "test_pwd")
+        response = self.client.post(
+            reverse("Hotel:share-order-room"),
+            data={
+                "permission": "view_orderroom",
+                "user": frend_user.username,
+                "object_pk": response.data['id'],
+            }
+        )
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        # <QueryDict: {'permission': ['hotel.view_orderroom'], 'user': ['frend user'], 'object_pk': ['1']}>
+        # multipart/form-data; boundary=BoUnDaRyStRiNg
+        # {'permission': 'hotel.view_orderroom', 'user': 'frend user', 'object_pk': 1}
+        # 'application/json'
+        self.client.logout()
+        self.client.force_login(frend_user)
+        response = self.client.get(reverse("Hotel:list-ordered-room"))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)

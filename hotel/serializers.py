@@ -19,20 +19,12 @@ class ShowPermissionSerializer(ModelSerializer):
 
 
 class GuardianSerializer(ModelSerializer):
-    permission = ChoiceField(
-        choices=[("hotel.view_orderroom", "hotel.view_orderroom"),
-                 ("hotel.change_orderroom", "hotel.change_orderroom")]
-    )
+    permission = CharField()
     user = CharField()
 
     class Meta:
         model = UserObjectPermission
         fields = ["permission", "object_pk", "user"]
-        
-    def to_representation(self, instance):
-        result = super().to_representation(instance)
-        result['permission'] = result['permission'].codename
-        return result
 
     def validate(self, attrs):
         ordered_room = OrderRoom.objects.get(pk=self.context['request'].data['object_pk'])
@@ -63,4 +55,4 @@ class OrderedRoomDetailSerializer(ModelSerializer):
 class OrderedRoomCreateSerializr(ModelSerializer):
     class Meta:
         model = OrderRoom
-        fields = ['room', "start_date", "end_date"]
+        fields = ["id", 'room', "start_date", "end_date"]
