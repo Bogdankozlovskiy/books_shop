@@ -17,5 +17,5 @@ urlpatterns = [
     path("api_v1/create_order_room/", APICreateOrderedRoom.as_view(), name="create-order-room"),
     path("api_v1/share_order/", ShareGuardianPermission.as_view(), name="share-order-room"),
     # path("api_v1/permissions/", DeletePermissionAPIView.as_view({"get": "list"}), name="show-permissions"),
-    # path("api_v1/permissions/<int:pk>/", DeletePermissionAPIView.as_view({"get": "retrieve", "delete": "destroy"}), name="delete-permissions")
+    path("api_v1/permissions/<int:pk>/", DeletePermissionAPIView.as_view({"delete": "destroy"}), name="delete-permissions")
 ] + router.urls

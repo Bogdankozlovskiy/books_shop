@@ -24,7 +24,7 @@ class GuardianSerializer(ModelSerializer):
 
     class Meta:
         model = UserObjectPermission
-        fields = ["permission", "object_pk", "user"]
+        fields = ["id", "permission", "object_pk", "user"]
 
     def validate(self, attrs):
         ordered_room = OrderRoom.objects.get(pk=self.context['request'].data['object_pk'])

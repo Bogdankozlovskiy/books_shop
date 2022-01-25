@@ -80,6 +80,7 @@ class TestOrder(TestCase):
                 "end_date": datetime.datetime(year=2022, month=1, day=10, hour=2)
             }
         )
+        # HW 1
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(
             response.data,
@@ -91,6 +92,7 @@ class TestOrder(TestCase):
             }
         )
         frend_user = User.objects.create_user("frend user", "test@mail", "test_pwd")
+        # HW 2
         response = self.client.post(
             reverse("Hotel:share-order-room"),
             data={
@@ -99,7 +101,9 @@ class TestOrder(TestCase):
                 "object_pk": response.data['id'],
             }
         )
+
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        permission_id = response.data['id']
         # <QueryDict: {'permission': ['hotel.view_orderroom'], 'user': ['frend user'], 'object_pk': ['1']}>
         # multipart/form-data; boundary=BoUnDaRyStRiNg
         # {'permission': 'hotel.view_orderroom', 'user': 'frend user', 'object_pk': 1}
@@ -109,3 +113,14 @@ class TestOrder(TestCase):
         response = self.client.get(reverse("Hotel:list-ordered-room"))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data), 1)
+
+        self.client.logout()
+        self.client.force_login(user)
+        response = self.client.delete(reverse("Hotel:delete-permissions", kwargs={"pk": permission_id}))
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+        self.client.logout()
+        self.client.force_login(frend_user)
+        response = self.client.get(reverse("Hotel:list-ordered-room"))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 0)
