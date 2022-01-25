@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+from os import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -103,9 +104,9 @@ ASGI_APPLICATION = 'bookshop.asgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "template1",
-        "USER": "bogdankozlovsky",
-        "PASSWORD": "gd0d469SS_",
+        'NAME': environ.get("POSTGRES_DB"),
+        "USER": environ.get("POSTGRES_USER"),
+        "PASSWORD": environ.get("POSTGRES_PASSWORD"),
         "HOST": "localhost",
         "PORT": 5432
     }
