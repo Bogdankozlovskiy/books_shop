@@ -11,7 +11,7 @@ def hello(request):
     all_books = cache.get("all_books")
     if all_books is not None:
         return render(request, "index.html", {"books": all_books})
-    query_1 = Comment.objects.annotate(likes=Count("like")).select_related("user")
+    query_1 = Comment.objects.annotate(likes=F("my_custom_like")).select_related("user")
     query_2 = Book.objects.annotate(
         avg_rate=Avg("rate_book_user_book__rate"),
         total_order=Sum("order_book_user_book__count")

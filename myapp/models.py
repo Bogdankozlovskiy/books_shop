@@ -112,7 +112,7 @@ def count_authors(sender, instance, **kwargs):
                 author.count += 1
                 author.save()
             else:
-                AuthorsStatistic.objects.create(id=author_id, count=1)
+                AuthorsStatistic.objects.create(author_id=author_id, count=1)
 
 
 models.signals.m2m_changed.connect(count_authors, sender=Book.authors.through)
