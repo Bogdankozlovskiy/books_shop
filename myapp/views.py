@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.core.cache import cache
 
 from myapp.models import Book, RateBookUser, OrderBookUser, Comment
-from myapp.utils import nlp_process
+from myapp.tasks import nlp_process
 
 
 def hello(request):
@@ -45,7 +45,8 @@ def add_comment(request, book_id):
         text=request.POST.get("comment"),
         book_id=book_id
     )
-    nlp_process(request.POST.get("comment"))
+    # nlp_process(request.POST.get("comment"))
+    nlp_process.delay(request.POST.get("comment"))
     return redirect("MyApp:main-page")
 
 

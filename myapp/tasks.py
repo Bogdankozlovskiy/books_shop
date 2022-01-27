@@ -6,3 +6,9 @@ from time import sleep
 def nlp_process(text):
     sleep(5)
     print("process")
+    return "hello from nlp"
+
+
+@shared_task
+def test(a):
+    return a ** 2
