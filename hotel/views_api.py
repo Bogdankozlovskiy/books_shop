@@ -94,7 +94,7 @@ class APICreateOrderedRoom(CreateAPIView):
 
 def my_function(request):
     date = OrderRoom.objects.all().order_by("date").last().date
-    return datetime.datetime(year=date.year, month=date.month, day=date.day, hour=0, minute=0)
+    return datetime.datetime(year=date.year, month=date.month, day=date.day)
 
 
 def my_little_fun(request):
@@ -126,11 +126,11 @@ class APIListOrderedRoom(ListAPIView):
         return get_objects_for_user(self.request.user, "hotel.view_orderroom", queryset, with_superuser=False)
 
     # @method_decorator(cache_control(max_age=40, private=True))
-    # @method_decorator(last_modified(my_function))
+    @method_decorator(last_modified(my_function))
     # @method_decorator(etag(my_little_fun))
     # @method_decorator(condition(etag_func=my_little_fun, last_modified_func=my_function))
     def get(self, *args, **kwargs):
-        print("test query")
+        # print("test query")
         return super().get(*args, **kwargs)
 
 
