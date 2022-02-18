@@ -24,7 +24,7 @@ class Book(models.Model):
     country = models.ForeignKey("Country", on_delete=models.SET_DEFAULT, default=1)
     # cach back
     objects = models.Manager()
-
+    # hello world
     def __str__(self):
         return self.title
 
