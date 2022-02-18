@@ -22,7 +22,7 @@ class Book(models.Model):
     order = models.ManyToManyField(User, related_name="ordered_books", through="myapp.OrderBookUser")
     price = models.DecimalField(max_digits=4, decimal_places=2, verbose_name="цена", validators=[validators.MinValueValidator(0)])
     country = models.ForeignKey("Country", on_delete=models.SET_DEFAULT, default=1)
-
+    # cach back
     objects = models.Manager()
 
     def __str__(self):
