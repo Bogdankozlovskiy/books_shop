@@ -17,3 +17,4 @@ class BookAdmin(GuardedModelAdmin):
 admin.site.register(Book, BookAdmin)
 admin.site.register(Country)
 # Register your models here.
+# add something
