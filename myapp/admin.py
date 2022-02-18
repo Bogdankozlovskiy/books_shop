@@ -19,3 +19,4 @@ admin.site.register(Country)
 # Register your models here.
 # add something
 # task 1
+# task 2
