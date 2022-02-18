@@ -27,7 +27,7 @@ class Book(models.Model):
     # hello world
     def __str__(self):
         return self.title
-
+    # comment     
 
 class AuthorsStatistic(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
